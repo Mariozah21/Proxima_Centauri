@@ -1,21 +1,24 @@
 /* CSS Document */
-body{background: rgb(255,255,255);}
-main {background:rgb(255,255,255,);}
+body, main {background: rgb(0,0,0);}
 
-footer {background:rgb(0,0,0); color:white}
-
-.wrapper{
-    background-image: url("/static/img/background.jpg");
+footer {
+    background:#444444;
+    color: black;
 }
 
+.wrapper{
+    background-image: url("/static/img/background.png");
+    color: white;
+
+}
 
 nav ul li a{
     color: white;
     text-decoration: none;
-    }
+}
 nav ul li a:hover{
-    color: #black
-    }
+    color: #A3C7D6;
+}
 
 .bloky div {background:rgb(216,191,216)}
 
@@ -27,6 +30,6 @@ button{
 }
 
 button:hover {
-    background-color: grey;
+    background-color: #A3C7D6;
 }
 
