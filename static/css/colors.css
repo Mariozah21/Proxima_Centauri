@@ -5,7 +5,7 @@ main {background:rgb(255,255,255,);}
 footer {background:rgb(0,0,0); color:white}
 
 .wrapper{
-    background-image: url("/static/img/space_background.jpg");
+    background-image: url("/static/img/background.jpg");
 }
 
 
