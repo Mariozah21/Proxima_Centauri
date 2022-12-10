@@ -1,0 +1,32 @@
+/* CSS Document */
+body{background: rgb(255,255,255);}
+main {background:rgb(255,255,255,);}
+
+footer {background:rgb(0,0,0); color:white}
+
+.wrapper{
+    background-image: url("/static/img/space_background.jpg");
+}
+
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    }
+nav ul li a:hover{
+    color: #black
+    }
+
+.bloky div {background:rgb(216,191,216)}
+
+h2,p {color: white}
+
+button{
+    background-color: white;
+    color: black
+}
+
+button:hover {
+    background-color: grey;
+}
+

@@ -1,0 +1,98 @@
+/* CSS Document */
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+main
+ {
+	margin: auto;
+	width: 70vw;
+	min-width: 800px;
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100%;
+
+}
+
+
+/*Navigace*/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space between;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+nav ul li {
+    list-style-type: none;
+	display: inline-block;
+	padding: 10px 20px;
+
+}
+
+nav ul li a{
+	transition: 0.8s;
+}
+
+
+.logo{
+    width: 5%;
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/*obsah stranky*/
+section {
+	padding: 1vw;
+	position: relative;
+}
+
+aside {
+	width: 12vw;
+	min-height: 8vw;
+	position: absolute;
+	left: -14vw;
+	top: 0;
+	padding: 1vw
+}
+
+.dva_sloupce {
+	column-count: 2;
+	column-gap: 2vw;
+	padding-left: 4vw;
+	padding-right: 4vw
+}
+
+.bloky {
+	display: flex;
+}
+
+.bloky div {
+	width: 100%;
+	margin: 2vw;
+	padding: 1vw
+}
+
+
+footer {
+	height: 10vw;
+	min-height: 100px;
+	display: flex;
+}
+
+footer div {
+	width: 100%;
+	text-align: center;
+}
