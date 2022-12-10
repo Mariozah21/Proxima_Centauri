@@ -6,6 +6,7 @@
 }
 
 main {
+    padding-top: 40px;
 	margin: auto;
 	width: 70vw;
 	min-width: 800px;
@@ -76,4 +77,8 @@ footer {
 footer div {
 	width: 100%;
 	text-align: center;
+}
+
+.img1{
+   width: 50%;
 }
