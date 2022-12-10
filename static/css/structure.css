@@ -6,7 +6,7 @@
 }
 
 main {
-    padding-top: 40px;
+    padding-top: 20px;
 	margin: auto;
 	width: 70vw;
 	min-width: 800px;
@@ -51,7 +51,7 @@ nav ul li a{
 }
 
 .logo2{
-    width: 28%;
+    width: 20%;
 }
 
 button{
@@ -68,10 +68,12 @@ button{
     left: 15%;
 }
 
+/*Footer*/
 footer {
 	height: 10vw;
 	min-height: 100px;
 	display: flex;
+    align-items: center;
 }
 
 footer div {
@@ -79,6 +81,21 @@ footer div {
 	text-align: center;
 }
 
+/*Main*/
 .img1{
-   width: 50%;
+   width: 100%;
+}
+
+.float-container{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.sub-two-container{
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding-right: 30px;
+
 }
