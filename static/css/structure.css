@@ -15,6 +15,9 @@ main
 .wrapper{
     height: 100vh;
     width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
@@ -43,6 +46,10 @@ nav ul li a{
 
 .logo{
     width: 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 30px;
 }
 
 button{
@@ -52,39 +59,6 @@ button{
     cursor: pointer;
     transition: 0.4s;
 }
-
-/*obsah stranky*/
-section {
-	padding: 1vw;
-	position: relative;
-}
-
-aside {
-	width: 12vw;
-	min-height: 8vw;
-	position: absolute;
-	left: -14vw;
-	top: 0;
-	padding: 1vw
-}
-
-.dva_sloupce {
-	column-count: 2;
-	column-gap: 2vw;
-	padding-left: 4vw;
-	padding-right: 4vw
-}
-
-.bloky {
-	display: flex;
-}
-
-.bloky div {
-	width: 100%;
-	margin: 2vw;
-	padding: 1vw
-}
-
 
 footer {
 	height: 10vw;
