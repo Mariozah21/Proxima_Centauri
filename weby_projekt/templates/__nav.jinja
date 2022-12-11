@@ -1,0 +1,17 @@
+{% block nav %}
+
+    <div class="wrapper">
+    <div class="headline"> PROXIMA CENTAURI B </div>
+
+    <nav>
+    <img class="logo" src="{{url_for('static', filename='img/logo.png')}}" alt="logo">
+    <ul>
+        <li><a href="{{url_for('index')}}">Domov</a></li>
+        <li><a href="{{url_for('view_about_us')}}">O nás</a></li>
+    </ul>
+    <a href="{{url_for('view_login_page')}}"><button type="button">Prihlasenie</button></a>
+    </nav>
+
+    </div>
+
+{% endblock%}

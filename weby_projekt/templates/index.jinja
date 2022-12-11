@@ -1,0 +1,55 @@
+{% extends '__main.jinja' %}
+
+{% block content %}
+
+<main>
+
+    <div class="float-container">
+        <div class="sub-two-container">
+        <img class="img1" src="{{url_for('static', filename='img/space.jpg')}}">
+        </div>
+
+        <div class="sub-two-container">
+        <p>Lorem ipsum dolor sit amet consectetuer sit neque augue Curabitur Vivamus.
+        Ipsum at ridiculus Fusce lobortis amet ornare nonummy Ut eleifend.
+        </p>
+
+        <p>Porttitor Sed eleifend nulla risus Curabitur non pretium non amet semper.
+        Orci Praesent In eget Ut odio parturient sed Morbi ut urna. Id libero malesuada neque malesuada nonummy et.
+        </p>
+        </div>
+    </div>
+
+    <section>
+        <p>
+        Lorem ipsum dolor sit amet consectetuer sit neque augue Curabitur Vivamus.
+        Ipsum at ridiculus Fusce lobortis amet ornare nonummy Ut eleifend.
+        Porttitor Sed eleifend nulla risus Curabitur non pretium non amet semper.
+        Orci Praesent In eget Ut odio parturient sed Morbi ut urna. Id libero malesuada
+        neque malesuada nonummy et. Contrary to popular belief, Lorem Ipsum is not simply random text.
+        It has roots in a piece of classical Latiliterature from 45 BC, making it over 2000 years old.
+        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of
+        the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites
+        of the word in classical literature, discovered the undoubtable source. Lorem Ipsum
+        </p>
+    </section>
+
+    <div class="float-container">
+        <div class="leftbox">
+            <img class="img2" src="{{url_for('static', filename='img/planet_pic.jpg')}}">
+        </div>
+
+        <div class="middlebox">
+            <img class="img3" src="{{url_for('static', filename='img/home2.png')}}">
+        </div>
+
+        <div class="rightbox">
+            <img class="img4" src="{{url_for('static', filename='img/spaceship.jpg')}}">
+        </div>
+
+    </div>
+
+
+</main>
+
+{% endblock%}

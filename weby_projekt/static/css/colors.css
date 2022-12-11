@@ -1,0 +1,40 @@
+/* CSS Document */
+body, main {background: rgb(18, 18, 18);}
+
+footer {
+    background:#3C415C;
+    color: white;
+}
+
+.wrapper{
+    background-image: url("/static/img/background.png");
+    color: white;
+
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: #A3C7D6;
+}
+
+h2,p {color: white}
+
+button{
+    background-color: white;
+    color: black
+}
+
+button:hover {
+    background-color: #A3C7D6;
+}
+
+/*on hover text na obrazku*/
+.rightbox:hover,.leftbox:hover,.middlebox:hover{
+    transition: .5s ease;
+    opacity:0.3;
+    color:white;
+    overflow: hidden;
+}
