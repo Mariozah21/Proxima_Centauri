@@ -33,10 +33,10 @@ def view_basemap_page():
 def view_mybase_page():
     return render_template("mybase.jinja")
 
+
 @app.route("/aboutus")
 def view_about_us():
     return render_template("aboutus.jinja")
-
 
 
 app.run('0.0.0.0', port=5000)
