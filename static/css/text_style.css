@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;600&display=swap');
-body{font-size:1.2vw; font-family: 'Roboto'; font-weight: 800; }
+body{font-size:1.2vw; font-family: 'Roboto'; font-weight: 400;}
 
-p{text-align:justify; margin:0 0 1vw 0}
+p {
+    text-align:justify;
+    margin:0 0 1vw 0;
+}
 
-aside h3 {font-size:1em}
-aside p {font-size:0.6em}
+nav ul li a {
+    font-weight: 800;
+}
 
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -16,6 +20,7 @@ aside p {font-size:0.6em}
     font-family: 'Roboto';
     font-weight: bold;
     animation: fadeIn 5s;
+    font-weight: 800;
 }
 
 button{

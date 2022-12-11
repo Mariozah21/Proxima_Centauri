@@ -6,7 +6,7 @@
 }
 
 main {
-    padding-top: 20px;
+    padding-top: 100px;
 	margin: auto;
 	width: 70vw;
 	min-width: 800px;
@@ -97,5 +97,40 @@ footer div {
     width: 50%;
     float: left;
     padding-right: 30px;
-
 }
+
+section{
+    padding:50px;
+}
+
+.leftbox{
+    float:left;
+    width:33%;
+    padding:20px;
+}
+
+.middlebox{
+    float:left;
+    width:33%;
+    padding:20px;
+}
+
+.rightbox{
+    float:right;
+    width:33%;
+    padding:20px;
+}
+
+/*upravit obrazky aby sa nestlacili*/
+.img2, .img3, .img4 {
+    height:500px;
+    width:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
