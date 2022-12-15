@@ -2,14 +2,13 @@
 body, main {background: rgb(18, 18, 18);}
 
 footer {
-    background:#3C415C;
+    background: black;
     color: white;
 }
 
 .wrapper{
     background-image: url("/static/img/background.png");
     color: white;
-
 }
 
 nav ul li a{
@@ -23,12 +22,14 @@ nav ul li a:hover{
 h2,p {color: white}
 
 button{
-    background-color: white;
-    color: black
+    background-color: Transparent;
+    border-color: white;
+    color: white;
 }
 
 button:hover {
-    background-color: #A3C7D6;
+    background-color: white;
+    color: black;
 }
 
 /*on hover text na obrazku*/
@@ -42,9 +43,4 @@ button:hover {
 .hoverwrap figcaption:hover {
     opacity: 1;
     transition: 0.5s;
-}
-
-.hoverwrap figcaption button:hover {
-    background-color: black;
-    color: white;
 }
