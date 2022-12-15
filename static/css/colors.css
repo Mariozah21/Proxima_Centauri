@@ -15,8 +15,10 @@ nav ul li a{
     color: white;
     text-decoration: none;
 }
-nav ul li a:hover{
-    color: #A3C7D6;
+
+nav ul li :hover{
+    padding-bottom: 15px;
+    border-bottom: 3px solid white;
 }
 
 h2,p {color: white}
@@ -30,6 +32,7 @@ button{
 button:hover {
     background-color: white;
     color: black;
+    transition: 0.4s;
 }
 
 /*on hover text na obrazku*/
