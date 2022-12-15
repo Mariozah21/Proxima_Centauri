@@ -35,17 +35,30 @@
     </section>
 
     <div>
-        <div class="imgblack">
-            <img class="img2" src="{{url_for('static', filename='img/planet_pic.jpg')}}">
-        </div>
+        <figure class="hoverwrap">
+            <figcaption>
+                O planéte
+                <a href="{{url_for('view_about_us')}}"><button>Viac</button></a>
+            </figcaption>
 
-        <div class="imgblack">
-            <img class="img3" src="{{url_for('static', filename='img/home2.png')}}">
-        </div>
+            <img src="{{url_for('static', filename='img/planet_pic1.jpg')}}">
+        </figure>
 
-        <div class="imgblack">
-            <img class="img4" src="{{url_for('static', filename='img/spaceship.jpg')}}">
-        </div>
+        <figure class="hoverwrap">
+            <figcaption>
+                Ubytovanie na planéte
+                <a href="{{url_for('view_about_us')}}"><button>Viac</button></a>
+            </figcaption>
+            <img src="{{url_for('static', filename='img/home3.jpg')}}">
+        </figure>
+
+        <figure class="hoverwrap">
+            <figcaption>
+                Ubytovanie na lodi
+                <a href="{{url_for('view_about_us')}}"><button>Viac</button></a>
+            </figcaption>
+            <img src="{{url_for('static', filename='img/spaceship.jpg')}}">
+        </figure>
 
     </div>
 
