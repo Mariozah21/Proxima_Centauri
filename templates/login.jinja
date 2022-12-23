@@ -1,16 +1,18 @@
-<!doctype html>
-<html lang="en">
+{% extends '__smallmain.jinja' %}
 
-<head></head>
+{% block content %}
 
+<main>
+    <div class="loginbox">
+        <form>
+            <input type="name" name="" placeholder="Meno:">
+            <br>
+            <input type="password" name="" placeholder="Heslo:">
+            <br>
+            <input type="submit" name="" value="Login">
+            <a href="/register">Registruj se</a>
+        </form>
+    </div>
+</main>
 
-<body>
-    <blockquote>
-        <p>There are 10 types of people: those who understand binary and those who dont.</p>
-        <footer>{{ author }}</footer>
-    </blockquote>
-
-</body>
-
-
-</html>
+{% endblock%}

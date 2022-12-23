@@ -1,0 +1,29 @@
+{% extends '__smallmain.jinja' %}
+
+{% block content %}
+
+<main>
+    <div class="loginbox">
+        <form>
+            <input type="name" name="" placeholder="Meno:">
+            <br>
+            <input type="password" name="" placeholder="Priezvisko:">
+            <br>
+            <p>Pohlavie</p> 
+            <input type="radio" name="" value="Muz">
+            <input type="radio" name="" value="Zena">
+            <input type="radio" name="" value="Jine">
+            <br>
+            <input type="name" name="" placeholder="Email:">
+            <br>
+            <input type="password" name="" placeholder="Heslo:">
+            <br>
+            <input type="password" name="" placeholder="Znovu heslo:">
+            <br>
+            <input type="submit" name="" value="Login">
+            <a href="/login">Login</a>
+        </form>
+    </div>
+</main>
+
+{% endblock%}

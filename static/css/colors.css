@@ -11,6 +11,11 @@ footer {
     color: white;
 }
 
+.small_wrapper{
+    background-image: url("/static/img/background.png");
+    color: white;
+}
+
 nav ul li a{
     color: white;
     text-decoration: none;

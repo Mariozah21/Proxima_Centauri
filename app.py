@@ -13,6 +13,10 @@ def index():
 def view_login_page():
     return render_template("login.jinja")
 
+@app.route("/register")
+def view_register_page():
+    return render_template("register.jinja")
+
 
 @app.route("/account")
 def view_account_page():
