@@ -43,3 +43,12 @@ button{
 .hoverwrap figcaption button {
     font-size:1vw;
 }
+
+
+.float-container figcaption {
+    font-size:5vw;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-weight: 300;
+    color: #fff;;
+}
