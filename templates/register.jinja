@@ -3,26 +3,35 @@
 {% block content %}
 
 <main>
-    <div class="loginbox">
+    <div class="registerbox">
         <form>
-            <input type="name" name="" placeholder="Meno:">
+            <input type="name" name="" placeholder="Meno:" required>
             <br>
-            <input type="password" name="" placeholder="Priezvisko:">
+            <input type="password" name="" placeholder="Priezvisko:" required>
             <br>
-            <p>Pohlavie</p> 
-            <input type="radio" name="" value="Muz">
-            <input type="radio" name="" value="Zena">
-            <input type="radio" name="" value="Jine">
+            <span>
+            <input type="Pohlavie" name="" placeholder="Pohlavie:">
+            <input type="radio" name="shipping" id="Muz" value="Pohlavie" required>
+            <label for="Muz">Muz</label>
+            </span>
+            <span>
+            <input type="radio" name="shipping" id="Zena" value="Pohlavie" required>
+            <label for="Zena">Zena</label>
+            </span>
+            <span>
+            <input type="radio" name="shipping" id="Ine" value="Pohlavie" required>
+            <label for="Ine">Ine</label>
+            </span>
             <br>
-            <input type="name" name="" placeholder="Email:">
+            <input type="name" name="" placeholder="Email:" required>
             <br>
-            <input type="password" name="" placeholder="Heslo:">
+            <input type="password" name="" placeholder="Heslo:" required>
             <br>
-            <input type="password" name="" placeholder="Znovu heslo:">
+            <input type="password" name="" placeholder="Znovu heslo:" required>
             <br>
-            <input type="submit" name="" value="Login">
-            <a href="/login">Login</a>
+            <button class="register">Registrovat</button>
         </form>
+        <a href="/login" class="backLogin">• Spät na prihlasenie</a>
     </div>
 </main>
 

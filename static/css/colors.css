@@ -52,3 +52,26 @@ button:hover {
     opacity: 1;
     transition: 0.5s;
 }
+
+
+.loginbox input[type="name"], input[type="password"], input[type="pohlavie"], .registerbox input[type="name"], input[type="password"], input[type="pohlavie"]{
+    color: #fff;
+}
+
+.register, .login{
+    border-color: white;
+    color: black;
+    background-color:rgb(37, 150, 190); 
+}
+
+.loginbox a{
+    color: black;
+}
+
+.registerbox a{
+    color: white;
+}
+
+.loginbox label, .registerbox label{
+    color: #fff;
+}

@@ -106,14 +106,51 @@ footer div {
     padding-right: 30px;
 }
 
-.loginbox{
-    padding-top:3%;
-    padding-left:30%;
-    padding-bottom:3%;
+.loginbox, .registerbox{
+    padding-top:15%;
+    padding-bottom:15%;
+    margin:auto;
+	width: 35%;
+    height: 40%;
+}
+
+.loginbox input[type="name"], input[type="password"], .registerbox input[type="name"], input[type="password"]{
     margin: auto;
-	width: 75%;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border-color:rgb(37, 150, 190);
+    border-radius: 1px;
+}
+
+.loginbox input[type="pohlavie"], .registerbox input[type="pohlavie"]{
+    margin: auto;
+    width: 30%;
+    height: 50px;
+    background: transparent;
+    border-color:rgb(37, 150, 190);
+    border-radius: 1px;
+}
+.register{
+    padding: 0px;
+    margin-left:35%;
+    border: 0px;
+	width: 30%;
+    height: 60px;
+}
+
+.login{
+    padding: 0px;
+    margin-left:10%;
+    border: 0px;
+	width: 30%;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.loginbox input[type="radio"] .registerbox input[type="radio"]{
+    transform: scale(2);
+    accent-color:rgb(37, 150, 190);
 }
 
 section{
