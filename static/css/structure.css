@@ -106,13 +106,22 @@ footer div {
     padding-right: 30px;
 }
 
-.loginbox, .registerbox{
+.loginbox{
     padding-top:15%;
     padding-bottom:15%;
     margin:auto;
 	width: 35%;
     height: 40%;
 }
+
+.registerbox{
+    padding-top:5%;
+    padding-bottom:15%;
+    margin:auto;
+	width: 35%;
+    height: 40%;
+}
+
 
 .loginbox input[type="name"], input[type="password"], .registerbox input[type="name"], input[type="password"]{
     margin: auto;
@@ -148,7 +157,7 @@ footer div {
     justify-content: space-between;
 }
 
-.loginbox input[type="radio"] .registerbox input[type="radio"]{
+.registerbox input[type="radio"]{
     transform: scale(2);
     accent-color:rgb(37, 150, 190);
 }
