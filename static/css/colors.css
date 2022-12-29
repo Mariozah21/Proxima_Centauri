@@ -16,6 +16,10 @@ footer {
     color: white;
 }
 
+.float-container2 {
+    background-color: #e1e5f2;
+}
+
 nav ul li a{
     color: white;
     text-decoration: none;
@@ -55,7 +59,9 @@ button:hover {
 
 
 .loginbox input[type="name"], input[type="password"], input[type="pohlavie"], .registerbox input[type="name"], input[type="password"], input[type="pohlavie"]{
-    color: #fff;
+    color: white;
+    padding-bottom: 15px;
+    border-bottom: 3px solid white;
 }
 
 .register, .login{
@@ -73,5 +79,5 @@ button:hover {
 }
 
 .loginbox label, .registerbox label{
-    color: #fff;
+    color: white;
 }

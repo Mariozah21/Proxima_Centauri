@@ -16,7 +16,7 @@
 }
 
 .small_wrapper{
-    height: 50vh;
+    height: 15vh;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,15 +30,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-top: 60px;
-    padding-right: 5%;
-}
-
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-top: 60px;
+    padding-top: 40px;
     padding-right: 5%;
 }
 
@@ -56,11 +48,12 @@ button{
 }
 
 .logo{
-    width: 5%;
+    width: 6%;
     position: absolute;
     top: 0;
     left: 0;
-    margin: 40px;
+    padding-top :30px;
+    padding-left: 30px;
 }
 
 .logo2{
@@ -92,44 +85,59 @@ footer div {
 }
 
 .float-container{
-    padding-top:100px;
+    padding-top:70px;
+    padding-bottom: 70px;
     margin: auto;
 	width: 80vw;
     display: flex;
     align-items: center;
 }
 
-.sub-two-container{
+.float-container2 {
+    padding-top: 10px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 0px 100px;
+}
+
+.sub-two-container {
     display: inline-block;
     width: 50%;
     float: left;
     padding-right: 30px;
+    padding-left: 30px;
 }
 
-.loginbox{
-    padding-top:15%;
-    padding-bottom:15%;
-    margin:auto;
-	width: 35%;
+.sub-two-container2 {
+    display: inline-block;
+    width: 50%;
+    float: right;
+}
+
+.middle-box{
+    float:left;
+    width:40%;
+    margin-left: 30%;
+}
+
+.loginbox, .registerbox {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin: auto;
+    width: 35%;
     height: 40%;
 }
-
-.registerbox{
-    padding-top:5%;
-    padding-bottom:15%;
-    margin:auto;
-	width: 35%;
-    height: 40%;
-}
-
 
 .loginbox input[type="name"], input[type="password"], .registerbox input[type="name"], input[type="password"]{
     margin: auto;
     width: 100%;
     height: 50px;
     background: transparent;
-    border-color:rgb(37, 150, 190);
     border-radius: 1px;
+    padding-left: 15px;
+    padding-top: 15px;
 }
 
 .loginbox input[type="pohlavie"], .registerbox input[type="pohlavie"]{
@@ -137,8 +145,9 @@ footer div {
     width: 30%;
     height: 50px;
     background: transparent;
-    border-color:rgb(37, 150, 190);
     border-radius: 1px;
+    padding-left: 15px;
+    padding-top: 15px;
 }
 .register{
     padding: 0px;
@@ -219,6 +228,15 @@ section{
     left: 45%;
 }
 
+.project-img {
+    border-radius: 0px 100px 0px 0px;
+}
 
+/*slider obrazkov*/
+/*dat prec hlupu posuvaciu listu*/
+
+.image-container {
+    
+}
 
 
