@@ -22,7 +22,13 @@ nav ul li a {
     font-size: 1.5vw;
     font-weight: 700;
 }
+@media screen and (max-width: 576px) {
+    nav ul li a{
+    font-size: 5vw;
+    font-weight: 1000;
+    }
 
+}
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -49,6 +55,14 @@ button{
     font-size:1.5vw;
     font-family: 'Roboto';
     font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+    button{
+    font-size:4vw;
+    font-family: 'Roboto';
+    font-weight: 1000;
+    }
 }
 
 .hoverwrap figcaption {
