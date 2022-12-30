@@ -39,6 +39,29 @@ nav ul li {
 	display: inline-block;
 	padding:15px 30px;
 }
+/*mobile nav*/
+.hamburger {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+    background: steelblue;
+    padding: 1em;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+     nav {
+        display: none;
+         background: steelblue;
+    }
+    nav.visible {
+        display: flex;
+    }
+}
 
 button{
     padding:15px 30px;
@@ -65,7 +88,14 @@ button{
     top: 32%;
     left: 15%;
 }
-
+/*mobile*/
+@media screen and (max-width: 576px) {
+    .headline {
+        position: absolute;
+        top: 35%;
+        right: 10%;
+    }
+}
 /*Footer*/
 footer {
 	height: 10vw;

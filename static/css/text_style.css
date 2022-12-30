@@ -35,7 +35,16 @@ nav ul li a {
     animation: fadeIn 5s;
     font-weight: 800;
 }
-
+/*mobile*/
+@media screen and (max-width: 576px) {
+    .headline{
+        font-size:50px;
+        font-family: 'Roboto';
+        font-weight: bold;
+        animation: fadeIn 5s;
+        font-weight: 800;
+    }
+}
 button{
     font-size:1.5vw;
     font-family: 'Roboto';
