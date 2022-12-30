@@ -19,6 +19,7 @@ h1 {
 }
 
 nav ul li a {
+    font-size: 1.5vw;
     font-weight: 700;
 }
 
@@ -28,7 +29,7 @@ nav ul li a {
 }
 
 .headline{
-    font-size:5.5vw;
+    font-size:80px;
     font-family: 'Roboto';
     font-weight: bold;
     animation: fadeIn 5s;
@@ -36,7 +37,7 @@ nav ul li a {
 }
 
 button{
-    font-size:1vw;
+    font-size:1.5vw;
     font-family: 'Roboto';
     font-weight: bold;
 }
