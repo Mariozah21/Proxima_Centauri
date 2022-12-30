@@ -8,10 +8,18 @@ body{font-size:1.2vw; font-family: 'Roboto'; font-weight: 400;}
 p {
     text-align:justify;
     margin:0 0 1vw 0;
+    font-size: 1.5vw;
+}
+
+h1 {
+    font-size: 3vw;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Roboto';
 }
 
 nav ul li a {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 @keyframes fadeIn {
@@ -54,22 +62,22 @@ button{
 }
 
 .loginbox, .registerbox{
-    font-size:7vw;
+    font-size:5vw;
     font-family: 'Roboto';
     font-weight: bold;
     font-weight: 100;
 }
 
 .loginbox input[type="name"], input[type="password"], input[type="pohlavie"], .registerbox input[type="name"], input[type="password"], input[type="pohlavie"]{
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 .register, .login{
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 
 
 .loginbox a , .registerbox a{
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-decoration: none;
 }
 
