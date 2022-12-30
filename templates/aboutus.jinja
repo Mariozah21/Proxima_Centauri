@@ -4,40 +4,49 @@
 
 <main>
     <div class="float-container">
-        <figcaption> O nás </figcaption>
+        <figcaption> O projekte </figcaption>
     </div>
 
     <div class="float-container">
-        <div class="sub-two-container">
-        <img class="img1" src="{{url_for('static', filename='img/space.jpg')}}">
-        </div>
 
-        <div class="sub-two-container">
-        <p>Lorem ipsum dolor sit amet consectetuer sit neque augue Curabitur Vivamus.
+        <p>
+        Lorem ipsum dolor sit amet consectetuer sit neque augue Curabitur Vivamus.
         Ipsum at ridiculus Fusce lobortis amet ornare nonummy Ut eleifend.
-        </p>
-
-        <p>Porttitor Sed eleifend nulla risus Curabitur non pretium non amet semper.
+        Porttitor Sed eleifend nulla risus Curabitur non pretium non amet semper.
         Orci Praesent In eget Ut odio parturient sed Morbi ut urna. Id libero malesuada neque malesuada nonummy et.
         </p>
-        </div>
+
     </div>
 
     <div class="float-container">
-        <div class="sub-two-container">
-        <p>Lorem ipsum dolor sit amet consectetuer sit neque augue Curabitur Vivamus.
-        Ipsum at ridiculus Fusce lobortis amet ornare nonummy Ut eleifend.
-        </p>
-
-        <p>Porttitor Sed eleifend nulla risus Curabitur non pretium non amet semper.
-        Orci Praesent In eget Ut odio parturient sed Morbi ut urna. Id libero malesuada neque malesuada nonummy et.
-        </p>
-        </div>
-
-        <div class="sub-two-container">
-        <img class="img1" src="{{url_for('static', filename='img/spaceship.jpg')}}">
-        </div>
+        <h1> Život na planéte </h1>
     </div>
+
+    <div class="float-container">
+        <h1> O planéte </h1>
+    </div>
+
+    <div class="float-container">
+        <h1> Život na lodi </h1>
+    </div>
+
+    <section class="image-container">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide1" src="{{url_for('static', filename='img/colony.jpg')}}" style="width:100%">
+                <img id="slide2" src="{{url_for('static', filename='img/colony.jpg')}}" style="width:100%">
+                <img id="slide3" src="{{url_for('static', filename='img/colony.jpg')}}" style="width:100%">
+                <img id="slide4" src="{{url_for('static', filename='img/colony.jpg')}}" style="width:100%">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide1"></a>
+                <a href="#slide2"></a>
+                <a href="#slide3"></a>
+                <a href="#slide4"></a>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 {% endblock%}
