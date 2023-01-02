@@ -2,7 +2,13 @@
 
     <div class="small_wrapper">
 
-    <nav>
+    <div
+        class="hamburger"
+        onclick="document.getElementById('nav').classList.toggle('visible')">
+    <span class="material-icons">menu</span>
+    </div>
+
+    <nav id="nav" onclick="document.getElementById('nav').classList.remove('visible')">
      <a href="{{url_for('index')}}"><img class="logo" src="{{url_for('static', filename='img/logo.png')}}" alt="logo"></a>
     <ul>
         <li><a href="{{url_for('index')}}">Domov</a></li>
