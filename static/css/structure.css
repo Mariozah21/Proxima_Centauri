@@ -122,6 +122,11 @@ footer div {
     display: flex;
     align-items: center;
 }
+@media screen and (max-width: 576px) {
+    .float-container{
+    display: unset;
+    }
+}
 
 .sub-two-container {
     display: inline-block;
@@ -129,6 +134,19 @@ footer div {
     float: left;
     padding-right: 30px;
     padding-left: 30px;
+}
+
+@media screen and (max-width: 576px) {
+    .sub-two-container{
+        padding-right: unset;
+        padding-left: unset;
+        float: none;
+        display: unset;
+        width: unset;
+    }
+    p{
+    padding-top: 30px;
+    }
 }
 
 /*prihlasovanie, registracia formular*/
@@ -184,6 +202,12 @@ footer div {
 
 section{
     padding:100px;
+}
+
+@media screen and (max-width: 576px) {
+    section{
+        padding:30px;
+    }
 }
 /*/
 .leftbox{
