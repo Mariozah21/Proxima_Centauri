@@ -83,6 +83,12 @@ button{
     width: 20%;
 }
 
+@media screen and (max-width: 576px) {
+    .logo2{
+        width: 50%;
+    }
+}
+
 .headline {
     position: absolute;
     top: 32%;
@@ -102,6 +108,12 @@ footer {
 	min-height: 100px;
 	display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+    footer {
+        min-height: 120px;
+    }
 }
 
 footer div {
