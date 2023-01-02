@@ -79,10 +79,22 @@ button{
     font-weight: bold;
     font-weight: 800;
 }
+@media screen and (max-width: 576px) {
+    .hoverwrap figcaption {
+    font-size:7vw;
+    }
+}
 
 .hoverwrap figcaption button {
     font-size:1vw;
 }
+
+@media screen and (max-width: 576px) {
+    .hoverwrap figcaption button {
+    font-size:4vw;
+    }
+}
+
 
 
 .float-container figcaption {

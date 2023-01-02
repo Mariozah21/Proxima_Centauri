@@ -238,6 +238,12 @@ section{
     align-items: center;
 }
 
+@media screen and (max-width: 576px) {
+    .hoverwrap{
+    height: 60vw;
+    }
+}
+
 .hoverwrap figcaption {
     position: absolute;
     top: 0;
@@ -249,7 +255,12 @@ section{
     text-align: center;
     line-height: 600px;
 }
-
+@media screen and (max-width: 576px) {
+    .hoverwrap figcaption{
+    line-height: unset;
+    padding: 80px;
+    }
+}
 .hoverwrap img {
     height:35vw;
     width:100%;
@@ -258,10 +269,23 @@ section{
     object-fit:cover;
 }
 
+@media screen and (max-width: 576px) {
+    .hoverwrap img{
+     height: 60vw;
+    }
+}
+
 .hoverwrap figcaption button {
     position: absolute;
     top: 60%;
     left: 45%;
+}
+
+@media screen and (max-width: 576px) {
+    .hoverwrap figcaption button{
+     top:65%;
+     left:30%;
+    }
 }
 
 .project-img {
