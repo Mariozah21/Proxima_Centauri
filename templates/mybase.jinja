@@ -1,0 +1,29 @@
+{% extends '__smallmain.jinja' %}
+
+{% block content %}
+
+<main>
+    <div class="profile">
+        <img class="profile-img" src="/static/img/colony2.jpg"></img>
+        <p class="profile-name">Meno Priezvisko</p>
+    </div>
+    
+    <div class="float-container">
+        <div class="sub-two-container">
+        <img class="img1" src="{{url_for('static', filename='img/home8.png')}}">
+        </div>
+
+        <div class="sub-two-container">
+        <p>Lorem ipsum dolor sit amet consectetuer sit neque augue Curabitur Vivamus.
+        Ipsum at ridiculus Fusce lobortis amet ornare nonummy Ut eleifend.
+        </p>
+
+        <p>Porttitor Sed eleifend nulla risus Curabitur non pretium non amet semper.
+        Orci Praesent In eget Ut odio parturient sed Morbi ut urna. Id libero malesuada neque malesuada nonummy et.
+        </p>
+        </div>
+    </div>
+
+</main>
+
+{% endblock%}
