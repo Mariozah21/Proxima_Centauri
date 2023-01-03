@@ -108,6 +108,21 @@ button{
     color: #fff;
 }
 
+@media screen and (max-width: 576px) {
+    .float-container figcaption {
+    font-size:8vw;
+    margin:10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .float-container h1{
+    font-size:5vw;
+    text-align: unset;
+    margin:10px;
+    }
+}
+
 .loginbox, .registerbox{
     font-size:5vw;
     font-family: 'Roboto';

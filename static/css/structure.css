@@ -138,6 +138,9 @@ footer div {
     .float-container{
     display: unset;
     }
+    .float-container h1{
+    padding-top: 20px;
+    }
 }
 
 .sub-two-container {
@@ -316,7 +319,11 @@ section{
     max-width: 60%;
     margin: 0 auto;
 }
-
+@media screen and (max-width: 576px) {
+    .slider-wrapper {
+    max-width: 100%;
+    }
+}
 .slider {
     display: flex;
     aspect-ratio: 16 / 9;
