@@ -146,7 +146,20 @@ button{
 .loginbox label, .registerbox label{
     font-size: 2vw;
 }
-
+@media screen and (max-width: 576px) {
+   .loginbox h1{
+    font-size:6vw;
+   }
+    .loginbox input[type="name"], input[type="password"], input[type="pohlavie"], .registerbox input[type="name"], input[type="password"], input[type="pohlavie"]{
+    font-size: 4vw;
+    }
+    .login{
+    font-size: 4vw;
+    }
+    .login a{
+    font-size: 4vw;
+    }
+}
 .zakladny div p{
     font-size: 2vw;
     font-weight: bold;

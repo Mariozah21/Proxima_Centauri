@@ -173,6 +173,16 @@ footer div {
     width: 35%;
     height: 40%;
 }
+@media screen and (max-width: 576px) {
+    .loginbox, .registerbox {
+    padding-top: 45%;
+    padding-bottom: 45%;
+    width: 55%;
+    }
+    .loginbox h1{
+    padding-bottom: 20px;
+    }
+}
 
 .loginbox input[type="name"], input[type="password"], .registerbox input[type="name"], input[type="password"]{
     margin: auto;
@@ -209,7 +219,11 @@ footer div {
     height: 60px;
     justify-content: space-between;
 }
-
+@media screen and (max-width: 576px) {
+    .login {
+        width: unset;
+    }
+}
 .registerbox input[type="radio"]{
     transform: scale(2);
     accent-color:rgb(37, 150, 190);
