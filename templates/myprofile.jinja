@@ -1,0 +1,24 @@
+{% extends '__smallmain.jinja' %}
+
+{% block content %}
+
+<main>
+    <div class="profile">
+        <img class="profile-img" src="/static/img/colony2.jpg"></img>
+        <p class="profile-name">Meno Priezvisko</p>
+    </div>
+    <div class="zakladny">
+        <div>
+            <p>Mapa Zakladni</p>
+            <br>
+            <button onclick="window.location.href='/basemap'">Viac</button>
+        </div>
+        <div>
+            <p>Moja Zakladna</p>
+            <br>
+            <button onclick="window.location.href='/mybase'">Viac</button>
+        </div>
+    </div>
+</main>
+
+{% endblock%}

@@ -131,3 +131,22 @@ button{
 .loginbox label, .registerbox label{
     font-size: 2vw;
 }
+
+.zakladny div p{
+    font-size: 2vw;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.zakladny div button{
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+    .zakladny div button{
+    font-size:2vw;
+    font-family: 'Roboto';
+    font-weight: 1000;
+    }
+}

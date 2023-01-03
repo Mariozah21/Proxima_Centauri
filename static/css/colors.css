@@ -87,3 +87,22 @@ button:hover {
         background: steelblue;
     }
 }
+
+.form-control {
+    background-color: black;
+    color: rgb(37, 150, 190);
+    border-color: rgb(37, 150, 190);
+}
+
+.zakladny div {
+    border-color: rgb(37, 150, 190);
+}
+
+.zakladny div p{
+    color: rgb(37, 150, 190);
+}
+
+.zakladny div button{
+    color: rgb(37, 150, 190);
+    border-color: rgb(37, 150, 190);
+}
