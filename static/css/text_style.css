@@ -159,7 +159,20 @@ button{
     .login a{
     font-size: 4vw;
     }
+    .registerbox h1{
+    font-size:6vw;
+   }
+    .registerbox label{
+    font-size: 3.5vw;
+    }
+    .register{
+     font-size: 3.5vw;
+    }
+    .registerbox a{
+    font-size: 4vw;
+    }
 }
+
 .zakladny div p{
     font-size: 2vw;
     font-weight: bold;

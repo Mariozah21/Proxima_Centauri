@@ -174,13 +174,21 @@ footer div {
     height: 40%;
 }
 @media screen and (max-width: 576px) {
-    .loginbox, .registerbox {
+    .loginbox {
     padding-top: 45%;
     padding-bottom: 45%;
     width: 55%;
     }
     .loginbox h1{
     padding-bottom: 20px;
+    }
+    .registerbox{
+    padding-top: 25%;
+    padding-bottom: 25%;
+    width: 55%;
+    }
+    .registerbox h1{
+     padding-bottom: 20px;
     }
 }
 
@@ -203,12 +211,23 @@ footer div {
     padding-left: 15px;
     padding-top: 15px;
 }
+
+@media screen and (max-width: 576px) {
+    .registerbox input[type="pohlavie"]{
+        width: 50%;
+    }
+}
 .register{
     padding: 0px;
     margin-left:35%;
     border: 0px;
 	width: 30%;
     height: 60px;
+}
+@media screen and (max-width: 576px) {
+    .register{
+        width: unset;
+    }
 }
 
 .login{
@@ -227,6 +246,12 @@ footer div {
 .registerbox input[type="radio"]{
     transform: scale(2);
     accent-color:rgb(37, 150, 190);
+}
+
+@media screen and (max-width: 576px) {
+    .registerbox input[type="radio"] {
+        transform: scale(1.5);
+    }
 }
 
 section{
