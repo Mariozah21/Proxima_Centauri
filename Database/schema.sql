@@ -1,24 +1,29 @@
+DROP TABLE IF EXISTS RegUzivatelia;
+DROP TABLE IF EXISTS typ_role;
+DROP TABLE IF EXISTS zakladne;
 
-CREATE TABLE "RegUzivatelia" (
+CREATE TABLE RegUzivatelia (
     id_uzivatela         INTEGER PRIMARY KEY AUTOINCREMENT,
-    meno                 VARCHAR2(50 CHAR) NOT NULL,
-    priezvisko           VARCHAR2(100 CHAR) NOT NULL,
-    pohlavie             VARCHAR2(5 CHAR) NOT NULL,
-    zakladne_id_zakladne INTEGER PRIMARY KEY NOT NULL,
-    status               VARCHAR2(100 CHAR) NOT NULL,
-    email                VARCHAR2(100 CHAR) NOT NULL,
-    heslo                VARCHAR2(100 CHAR) NOT NULL,
-    typ_role_id_role     INTEGER PRIMARY KEY NOT NULL
+    meno                 TEXT NOT NULL,
+    priezvisko           TEXT NOT NULL,
+    pohlavie             TEXT NOT NULL,
+    zakladne_id_zakladne INTEGER NOT NULL,
+    status               TEXT NOT NULL,
+    email                TEXT NOT NULL,
+    heslo               TEXT NOT NULL,
+    typ_role_id_role     INTEGER NOT NULL,
+    FOREIGN KEY (zakladne_id_zakladne) REFERENCES zakladne (id_zak),
+    FOREIGN KEY (typ_role_id_role) REFERENCES typ_role (id_role)
 );
 
 CREATE TABLE typ_role (
     id_role  INTEGER PRIMARY KEY NOT NULL,
-    typ_role VARCHAR2(50 CHAR) NOT NULL
+    typ_role TEXT NOT NULL
 );
 
 CREATE TABLE zakladne (
-    "id_zak."                INTEGER PRIMARY KEY AUTOINCREMENT,
-    nazov                    VARCHAR2(200 CHAR) NOT NULL,
+    id_zak                INTEGER PRIMARY KEY AUTOINCREMENT,
+    nazov                    TEXT NOT NULL,
     stavej                   INTEGER NOT NULL,
     suradnica_x              FLOAT NOT NULL,
     suradnica_y              FLOAT NOT NULL,
@@ -95,11 +100,11 @@ INSERT INTO typ_role (id_role, typ_role) VALUES (3, "kolonista");
 
 --inserting bases
 
-INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (1 ,"Merkur01" ,15000 ,49.12.00 ,16.37.00 ,200000);
-INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (2 ,"Venusa02" ,20000 ,50.05.14 ,14.25.16 ,350000);
-INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (3 ,"Zem03" ,10000 ,48.53.39 ,18.02.26 ,200000);
-INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (4 ,"Mars04" ,30000 ,39.54.50 ,116.23.30 ,500000);
-INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (5 ,"Jupiter05" ,25000 ,35.41.00 ,139.41.00 ,400000);
-INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (6 ,"Saturn06" ,20000, 51.30.26 ,00.07.39 ,250000);
-INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (7 ,"Uran07" ,35000 ,33.51.36 ,151.12.40 ,400000);
-INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (8 ,"Neptun08", 35000 ,38.51.36 ,200.12.40 ,400000);
+INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (1 ,"Merkur01" ,15000 ,49.12 ,16.37 ,200000);
+INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (2 ,"Venusa02" ,20000 ,50.05 ,14.25 ,350000);
+INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (3 ,"Zem03" ,10000 ,48.53 ,18.02 ,200000);
+INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (4 ,"Mars04" ,30000 ,39.54 ,116.23 ,500000);
+INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (5 ,"Jupiter05" ,25000 ,35.41 ,139.41 ,400000);
+INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (6 ,"Saturn06" ,20000, 51.30 ,00.07 ,250000);
+INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (7 ,"Uran07" ,35000 ,33.51 ,151.12 ,400000);
+INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (8 ,"Neptun08", 35000 ,38.51 ,200.12 ,400000);
