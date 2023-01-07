@@ -1,39 +1,18 @@
 {% extends '__smallmain.jinja' %}
+{% from 'macros/form_field.jinja' import render_field with context %}
 
 {% block content %}
 
-<main>
-    <div class="registerbox">
+<section>
         <form>
-            <h1>Registrácia</h1>
-            <input type="name" name="" placeholder="Meno:" required>
-            <br>
-            <input type="password" name="" placeholder="Priezvisko:" required>
-            <br>
-            <span>
-            <input type="Pohlavie" name="" placeholder="Pohlavie:">
-            <input type="radio" name="shipping" id="Muz" value="Pohlavie" required>
-            <label for="Muz">Muž</label>
-            </span>
-            <span>
-            <input type="radio" name="shipping" id="Zena" value="Pohlavie" required>
-            <label for="Zena">Žena</label>
-            </span>
-            <span>
-            <input type="radio" name="shipping" id="Ine" value="Pohlavie" required>
-            <label for="Ine">Iné</label>
-            </span>
-            <br>
-            <input type="name" name="" placeholder="Email:" required>
-            <br>
-            <input type="password" name="" placeholder="Heslo:" required>
-            <br>
-            <input type="password" name="" placeholder="Znovu heslo:" required>
-            <br>
+            {{ render_field(form.meno) }}
+            {{ render_field(form.priezvisko) }}
+            {{ render_field(form.pohlavie) }}
+            {{ render_field(form.email) }}
+            {{ render_field(form.heslo) }}
             <button class="register">Registrovať</button>
         </form>
         <a href="/login" class="backLogin">• späť na prihlásenie</a>
-    </div>
-</main>
+</section>
 
 {% endblock%}

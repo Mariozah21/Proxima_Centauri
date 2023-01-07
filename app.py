@@ -1,10 +1,11 @@
 from flask import Flask, render_template,request, flash, redirect, url_for, session
 from Database import database
 from service.user_service import UserService
-import forms
+import forms, auth
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
+app.config.from_object('config')
 database.init_app(app)
 
 
@@ -49,6 +50,7 @@ def view_account_page():
 
 
 @app.route("/myprofile")
+@auth.login_required
 def view_myprofile_page():
     return render_template("myprofile.jinja")
 

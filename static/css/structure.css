@@ -462,3 +462,14 @@ section{
 .zakladny div p {
     margin-left: 25%;
 }
+
+.anchor {
+    /*
+    Used to create an invisible element that is jumped to when clicking a link in the navbar.
+    This element has a negative offset to ensure that the target section is not hidden behind the floating navbar.
+     */
+        display: block;
+        position: relative;
+        top: -5.5em;
+        visibility: hidden;
+    }

@@ -1,19 +1,20 @@
 {% extends '__smallmain.jinja' %}
+{% from 'macros/form_field.jinja' import render_field with context %}
 
 {% block content %}
 
-<main>
+<section>
     <div class="loginbox">
         <form>
             <h1>Prihlásenie</h1>
-            <input type="name" name="" placeholder="Email:" required>
+            {{ render_field(form.login) }}
             <br>
-            <input type="password" name="" placeholder="Heslo:" required>
+            {{ render_field(form.password) }}
             <br>
-            <button class="login" >Prihlásiť sa</button>
-            <button class="login"><a href="/register">Registrácia</a></button>
         </form>
+            <a href="/myprofile"><button class="login">Prihlásiť sa</button></a>
+            <a href="/register"><button class="login">Registrácia</button></a>
     </div>
-</main>
+</section>
 
 {% endblock%}
