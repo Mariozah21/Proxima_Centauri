@@ -1,7 +1,10 @@
 from flask import Flask, render_template
+from Database import database
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
+database.init_app(app)
+
 
 
 @app.route("/")
