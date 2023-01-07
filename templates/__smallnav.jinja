@@ -14,7 +14,7 @@
         <li><a href="{{url_for('index')}}">Domov</a></li>
         <li><a href="{{url_for('view_about_us')}}">O projekte</a></li>
     </ul>
-    {% if session['authenticated']%}
+    {% if session['authenticated'] %}
         <a href="{{url_for('view_myprofile_page')}}"><button type="button">Profil</button></a>
     {% else %}
         <a href="{{url_for('view_login_page')}}"><button type="button">Prihlásenie</button></a>

@@ -10,10 +10,9 @@ class UserService():
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
         
         user = db.execute('''
-            SELECT RegUzivatelia.id_uzivatela, RegUzivatelia.email ,typ_role.typ_role 
+            SELECT RegUzivatelia.id_uzivatela, RegUzivatelia.email, typ_role.typ_role 
             FROM RegUzivatelia
-            JOIN typ_role ON (typ_role_id_role = typ_role.id_role)
-            WHERE email = ? AND heslo = ? ''',[login, hashed_heslo.hexdigest()]).fetchone()
+            WHERE email = ? AND heslo = ? ''',[login, heslo]).fetchone()
         if user:
             return user
         else:
@@ -23,6 +22,6 @@ class UserService():
     def register_user(meno,priezvisko,pohlavie,email,heslo):
         db = get_db()
         db.execute(
-            'INSERT INTO RegUzivatelia (meno, priezvisko, pohlavie, email, heslo) VALUES (? ,? ,?, ?, ?)', [meno, priezvisko, pohlavie, email, heslo]
+            'INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (?, ? ,? ,? ,?, ?, ?, ?, ?)', [22, meno, priezvisko, pohlavie, 5, 'status', email, heslo, 3]
         )
         db.commit()
