@@ -46,7 +46,7 @@ nav ul li a {
 }
 
 .headline{
-    font-size:80px;
+    font-size:5vw;
     font-family: 'Roboto';
     font-weight: bold;
     animation: fadeIn 5s;
