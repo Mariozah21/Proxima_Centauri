@@ -18,3 +18,11 @@ class UserService():
             return user
         else:
             return None
+
+    @staticmethod
+    def register_user(meno,priezvisko,pohlavie,email,heslo):
+        db = get_db()
+        db.execute(
+            'INSERT INTO RegUzivatelia (meno, priezvisko, pohlavie, email, heslo) VALUES (? ,? ,?, ?, ?)', [meno, priezvisko, pohlavie, email, heslo]
+        )
+        db.commit()

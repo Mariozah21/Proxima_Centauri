@@ -24,13 +24,23 @@ def view_login_page():
         else:
             session['authenticated'] = 1
             session['email'] = user['email']
-            session['role'] = user['role']
+            session['typ_role'] = user['typ_role']
             return redirect(url_for('index'))
-    return render_template("login.jinja")
+    return render_template("login.jinja" ,form = form )
 
-@app.route("/register")
+@app.route("/register", methods=['GET','POST'])
 def view_register_page():
-    return render_template("register.jinja")
+    form = forms.RegisterUserForm(request.form)
+    if request.method == 'POST':
+        UserService.register_user(
+           meno=request.form['meno'],
+           priezvisko=request.form['priezvisko'],
+           pohlavie=request.form['pohlavie'],
+           email=request.form['email'],
+           heslo=request.form['heslo'], 
+        )
+        flash('Uzivatel zaregistrovany')
+    return render_template("register.jinja", form=form)
 
 
 @app.route("/account")
