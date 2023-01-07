@@ -26,8 +26,8 @@ nav ul li a{
 }
 
 nav ul li :hover{
-    padding-bottom: 15px;
-    border-bottom: 3px solid white;
+    padding-bottom: 1.5vw;
+    border-bottom: 0.10em solid white;
 }
 
 h1,h2,p {color: white}
@@ -86,6 +86,15 @@ button:hover {
     nav{
         background: steelblue;
     }
+}
+
+.backLogin {
+    text-decoration:none;
+    color: white;
+}
+
+.backLogin:hover {
+    color: rgb(37, 150, 190);
 }
 
 .form-control {
