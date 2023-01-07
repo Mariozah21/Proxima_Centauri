@@ -194,3 +194,14 @@ button{
     font-weight: 1000;
     }
 }
+
+input{
+    color: #e1e5f2;
+    font-size:2vw;
+}
+
+@media screen and (max-width: 576px) {
+    input{
+        font-size:5vw;
+    }
+}
