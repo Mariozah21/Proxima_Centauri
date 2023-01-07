@@ -1,19 +1,19 @@
 import hashlib
-from database.database import get_db
+from Database.database import get_db
 import config
 
 class UserService():
   
     @staticmethod
-    def verify(login, password):
+    def verify(login, heslo):
         db = get_db()
-        hashed_passorwd = hashlib.sha256(f'{password}{config.PASSWORD_SALT}'.encode())
+        hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
         
         user = db.execute('''
-            SELECT users.id, users.login, users.is_active, user_types.role 
-            FROM users 
-            JOIN user_types ON (user_type_id = user_types.id)
-            WHERE login = ? AND password = ?''',[login, hashed_passorwd.hexdigest()]).fetchone()
+            SELECT RegUzivatelia.id_uzivatela, RegUzivatelia.email ,typ_role.typ_role 
+            FROM RegUzivatelia
+            JOIN typ_role ON (typ_role_id_role = typ_role.id_role)
+            WHERE email = ? AND heslo = ? ''',[login, hashed_heslo.hexdigest()]).fetchone()
         if user:
             return user
         else:

@@ -1,5 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request, flash, redirect, url_for, session
 from Database import database
+from service.user_service import UserService
+import forms
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -12,8 +14,18 @@ def index():
     return render_template("index.jinja")
 
 
-@app.route("/login")
+@app.route("/login", methods=['GET','POST'])
 def view_login_page():
+    form = forms.SignInForm(request.form)
+    if request.method == 'POST':
+        user = UserService.verify(login=request.form['email'], password=request.form['password'])
+        if not user:
+            flash('Nespravny email alebo heslo')
+        else:
+            session['authenticated'] = 1
+            session['email'] = user['email']
+            session['role'] = user['role']
+            return redirect(url_for('index'))
     return render_template("login.jinja")
 
 @app.route("/register")
