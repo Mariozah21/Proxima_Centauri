@@ -19,14 +19,19 @@ def index():
 def view_login_page():
     form = forms.SignInForm(request.form)
     if request.method == 'POST':
-        user = UserService.verify(login=request.form['email'], password=request.form['heslo'])
+        user = UserService.verify(login=request.form['email'], heslo=request.form['heslo'])
         if not user:
             flash('Nespravny email alebo heslo')
         else:
+            flash
             session['authenticated'] = 1
             session['email'] = user['email']
-            session['typ_role'] = user['typ_role']
-            return redirect(url_for('index'))
+            session['role'] = user['id_role']
+            session['meno'] = user['meno']
+            session['priezvisko'] = user['priezvisko']
+            
+
+            return redirect(url_for('view_myprofile_page'))
     return render_template("login.jinja" ,form = form )
 
 @app.route("/register", methods=['GET','POST'])

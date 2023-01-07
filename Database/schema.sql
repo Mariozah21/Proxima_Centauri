@@ -10,7 +10,7 @@ CREATE TABLE RegUzivatelia (
     zakladne_id_zakladne INTEGER NOT NULL,
     status               TEXT NOT NULL,
     email                TEXT NOT NULL,
-    heslo               TEXT NOT NULL,
+    heslo                TEXT NOT NULL,
     typ_role_id_role     INTEGER NOT NULL,
     FOREIGN KEY (zakladne_id_zakladne) REFERENCES zakladne (id_zak),
     FOREIGN KEY (typ_role_id_role) REFERENCES typ_role (id_role)
