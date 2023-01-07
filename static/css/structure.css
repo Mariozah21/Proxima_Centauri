@@ -241,6 +241,7 @@ footer div {
 @media screen and (max-width: 576px) {
     .login {
         width: unset;
+        margin-left: unset;
     }
 }
 .registerbox input[type="radio"]{

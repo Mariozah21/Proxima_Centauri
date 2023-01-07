@@ -150,6 +150,9 @@ button{
    .loginbox h1{
     font-size:6vw;
    }
+    .loginbox label{
+    font-size:6vw;
+   }
     .loginbox input[type="name"], input[type="password"], input[type="pohlavie"], .registerbox input[type="name"], input[type="password"], input[type="pohlavie"]{
     font-size: 4vw;
     }
@@ -168,7 +171,7 @@ button{
     .register{
      font-size: 3.5vw;
     }
-    .registerbox a{
+    .registerbox label{
     font-size: 4vw;
     }
 }
