@@ -19,7 +19,7 @@ def index():
 def view_login_page():
     form = forms.SignInForm(request.form)
     if request.method == 'POST':
-        user = UserService.verify(login=request.form['email'], password=request.form['password'])
+        user = UserService.verify(login=request.form['email'], password=request.form['heslo'])
         if not user:
             flash('Nespravny email alebo heslo')
         else:

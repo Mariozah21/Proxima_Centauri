@@ -8,11 +8,11 @@ class UserService():
     def verify(login, heslo):
         db = get_db()
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
-        
+
         user = db.execute('''
-            SELECT RegUzivatelia.id_uzivatela, RegUzivatelia.email, typ_role.typ_role 
+            SELECT RegUzivatelia.id_uzivatela, RegUzivatelia.email, RegUzivatelia.heslo, typ_role.typ_role 
             FROM RegUzivatelia
-            WHERE email = ? AND heslo = ? ''',[login, heslo]).fetchone()
+            WHERE email = ? AND heslo = ? ''',[login, hashed_heslo.hexdigest()]).fetchone()
         if user:
             return user
         else:
