@@ -78,7 +78,13 @@ def view_mybase_page():
 def view_about_us():
     return render_template("aboutus.jinja")
 
-@app.route("/myprofile/newbase", methods=['GET','POST'])
+@app.route("/ultvlad")
+@auth.login_required
+@auth.roles_required(1)
+def view_ultvlad_page():
+    return render_template("ultvlad.jinja")
+
+@app.route("/ultvlad/newbase", methods=['GET','POST'])
 @auth.login_required
 @auth.roles_required(1)
 def view_new_base():
@@ -93,6 +99,39 @@ def view_new_base():
         )
         flash('Uzivatel zaregistrovany')
     return render_template("newbase.jinja", form=form)
+
+@app.route("/ultvlad/usermove", methods=['GET','POST'])
+@auth.login_required
+@auth.roles_required(1)
+def view_user_move():
+    form = forms.UserMoveForm(request.form)
+    if request.method == 'POST':
+        UserService.move_user(zakladne_id_zakladne=request.form['zakladne_id_zakladne'], email=request.form['email'], heslo=request.form['heslo'])
+        flash('Uzivatel presunut')
+        return redirect(url_for('view_ultvlad_page'))
+    return render_template("usermove.jinja", form=form)
+
+@app.route("/ultvlad/namingvladca", methods=['GET','POST'])
+@auth.login_required
+@auth.roles_required(1)
+def view_naming_vladca():
+    form = forms.NameUserForm(request.form)
+    if request.method == 'POST':
+        UserService.name_user(email=request.form['email'], heslo=request.form['heslo'])
+        flash('Vladca jmenovan')
+        return redirect(url_for('view_ultvlad_page'))
+    return render_template("namingvladca.jinja", form=form)
+
+@app.route("/ultvlad/energprice", methods=['GET','POST'])
+@auth.login_required
+@auth.roles_required(1)
+def view_energ_price():
+    form = forms.EnergyForm(request.form)
+    if request.method == 'POST':
+        UserService.name_user(kolik=request.form['stavej'], nazov=request.form['nazov'])
+        flash('Jednotky zmeneny')
+        return redirect(url_for('view_ultvlad_page'))
+    return render_template("energprice.jinja", form=form)
 
 @app.route('/logout')
 @auth.login_required
