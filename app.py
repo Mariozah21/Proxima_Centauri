@@ -40,16 +40,21 @@ def view_login_page():
 def view_register_page():
     form = forms.RegisterUserForm(request.form)
     if request.method == 'POST':
-        UserService.register_user(
+        user = UserService.email_control(request.form['email'])
+        if user is None:
+            UserService.register_user(
            meno=request.form['meno'],
            priezvisko=request.form['priezvisko'],
            pohlavie=request.form['pohlavie'],
            email=request.form['email'],
            heslo=request.form['heslo'], 
            zakladne_id_zakladne=request.form['zakladne_id_zakladne'],
-        )
-        flash('Uzivatel zaregistrovany')
-        return redirect(url_for('view_login_page'))
+            )
+            flash('Uzivatel zaregistrovany')
+            return redirect(url_for('view_login_page'))
+        else:
+            flash('Uzivatel uz existuje')
+            return redirect(url_for('view_register_page'))
     return render_template("register.jinja", form=form)
 
 

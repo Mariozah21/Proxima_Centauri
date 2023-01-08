@@ -62,3 +62,10 @@ class UserService():
         db = get_db()
         sql = 'SELECT meno, priezvisko, pohlavie, email , zakladne_id_zakladne FROM RegUzivatelia'
         return db.execute( sql ).fetchall()
+
+    @staticmethod
+    def email_control(email):
+        db = get_db()
+        user = db.execute(
+            'SELECT RegUzivatelia.email FROM RegUzivatelia WHERE email = ?', [email]).fetchone()
+        return user
