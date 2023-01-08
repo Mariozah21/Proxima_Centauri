@@ -8,10 +8,11 @@ CREATE TABLE RegUzivatelia (
     priezvisko           TEXT NOT NULL,
     pohlavie             TEXT NOT NULL,
     zakladne_id_zakladne INTEGER NOT NULL,
-    status               TEXT NOT NULL,
+    status               TEXT ,
     email                TEXT NOT NULL,
     heslo                TEXT NOT NULL,
     typ_role_id_role     INTEGER NOT NULL,
+    profilovka           TEXT ,
     FOREIGN KEY (zakladne_id_zakladne) REFERENCES zakladne (id_zak),
     FOREIGN KEY (typ_role_id_role) REFERENCES typ_role (id_role)
 );
