@@ -468,15 +468,38 @@ th {
     margin-top: 1.5em;
     margin-right: 2em;
 }
+.moznostivladca{
+     display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5em;
+    margin-right: 2em;
+}
 
 @media screen and (max-width: 576px) {
     .logout{
         padding-top: 60px;
         padding-bottom: 30px;
-        display: inline-block;
+        display:inline-block;
+    }
+    .moznostivladca {
+        padding-top: 60px;
+        padding-bottom: 30px;
+        display:flex;
+        margin-right: unset;
+    }
+    .moznostivladca button{
+        margin-left: unset;
     }
 }
 
+.moznostivladca button{
+    padding:0.5em 1em;
+    border-radius: 3px;
+    border:0.12em solid;
+    box-sizing: border-box;
+    font-size: 1em;
+
+}
 .logout button{
     padding:0.5em 1em;
     border-radius: 3px;
