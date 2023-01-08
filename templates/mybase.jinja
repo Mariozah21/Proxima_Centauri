@@ -25,10 +25,10 @@
         </div>
     </div>
 
-    <div class="side-by-side">
+    <div class="spoluobyvatelia">
         {% for user in RegUzivatelia if user.zakladne_id_zakladne == session['id_zakladne']%}
             <div>
-            <p> {{user.meno}} {{user.priezvisko}} {{user.pohlavie}} {{user.email}}</p>
+                <p>{{user.meno}} {{user.priezvisko}} {{user.pohlavie}} {{user.email}}</p>
             </div>
         {% else %}
         <div>

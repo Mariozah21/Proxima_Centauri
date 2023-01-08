@@ -518,3 +518,8 @@ th {
 .sub-two-container td button{
     margin-left: unset;
 }
+
+.spoluobyvatelia p{
+  border-bottom: 1px solid #ddd;
+}
+
