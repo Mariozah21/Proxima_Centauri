@@ -4,7 +4,8 @@
 {% block content %}
 
 <main>
-        <form method=post class="registerbox">
+<div class="registerbox">
+        <form method=post>
             {{ render_field(form.nazov) }}
             {{ render_field(form.stavej) }}
             {{ render_field(form.suradnica_x) }}
@@ -12,6 +13,7 @@
             {{ render_field(form.medzi_galakticke_kredity) }}
             <input type="submit" class="register" value="Pridať základnu">
         </form>
+        </div>
 </main>
 
 {% endblock%}
