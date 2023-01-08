@@ -414,6 +414,13 @@ section{
     margin-left: 25%;
 }
 
+.odhlasenie{
+    width: 90%;
+    margin: auto;
+    height: 150px;
+    justify-content: space-between;
+}
+
 #logout{
     margin-left: 85%;
     margin-bottom: 2%;

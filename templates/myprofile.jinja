@@ -8,7 +8,7 @@
         <p class="profile-name">Meno Priezvisko </p>
     </div>  
         <div class="profileButton">
-            <button onclick="window.location.href='/mybase'">Upraviť profil</button>
+            <button onclick="window.location.href='/myprofile/newbase'">Upraviť profil</button>
         </div>
     <div class="zakladny">
         <div>
@@ -22,6 +22,9 @@
             <button onclick="window.location.href='/mybase'">Viac</button>
         </div>
     </div>
+    {% if session['role'] == 2 or session['role'] == 1 %}
+    <button id="newbase" onclick="window.location.href='/myprofile/newbase'">Nová zakladna</button>
+    {% endif %}
     <button id="logout" onclick="window.location.href='/logout'">Odhlásiť</button>
 </main>
 
