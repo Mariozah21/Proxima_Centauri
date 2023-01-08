@@ -28,3 +28,30 @@ class UserService():
             'INSERT INTO RegUzivatelia (meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (? ,? ,? ,?, ?, ?, ?, ?)', [meno, priezvisko, pohlavie, zakladne_id_zakladne, 'status', email, heslo, 3]
         )
         db.commit()
+   
+    
+    @staticmethod
+    def move_user(zakladne_id_zakladne, email, heslo):
+        db = get_db()
+        db.execute(
+            'UPDATE RegUzivatelia SET zakladne_id_zakladne = ? WHERE email = ? AND heslo = ?', [zakladne_id_zakladne, email, heslo]
+            )
+        db.commit()
+
+    
+    @staticmethod
+    def name_user(email, heslo):
+        db = get_db()
+        db.execute(
+            'UPDATE RegUzivatelia SET typ_role_id_role = 2 WHERE email = ? AND heslo = ?', [email, heslo]
+            )
+        db.commit() 
+
+        
+    @staticmethod
+    def name_user(kolik, nazov):
+        db = get_db()
+        db.execute(
+            'UPDATE zakladne SET stavej = ? WHERE nazov = ?', [kolik, nazov]
+            )
+        db.commit() 

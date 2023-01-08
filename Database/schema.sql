@@ -12,7 +12,6 @@ CREATE TABLE RegUzivatelia (
     email                TEXT NOT NULL,
     heslo                TEXT NOT NULL,
     typ_role_id_role     INTEGER NOT NULL,
-    profilovka           TEXT,
     FOREIGN KEY (zakladne_id_zakladne) REFERENCES zakladne (id_zak),
     FOREIGN KEY (typ_role_id_role) REFERENCES typ_role (id_role)
 );
@@ -30,16 +29,6 @@ CREATE TABLE zakladne (
     suradnica_y              FLOAT NOT NULL,
     medzi_galakticke_kredity INTEGER NOT NULL
 );
-/*
-ALTER TABLE "RegUzivatelia"
-    ADD CONSTRAINT "RegUzivatelia_Typ_role_FK" FOREIGN KEY ( typ_role_id_role )
-        REFERENCES typ_role ( id_role );
-
-ALTER TABLE "RegUzivatelia"
-    ADD CONSTRAINT "RegUzivatelia_Zakladne_FK" FOREIGN KEY ( zakladne_id_zakladne )
-        REFERENCES zakladne ( "id_zak." );
-
-*/
 -- Inserti initial data
 
 --inserting registered users

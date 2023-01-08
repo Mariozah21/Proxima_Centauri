@@ -1,0 +1,14 @@
+{% extends '__smallmain.jinja' %}
+{% from 'macros/form_field.jinja' import render_field with context %}
+
+{% block content %}
+
+<main>
+        <form method=post class="registerbox">
+            {{ render_field(form.email) }}
+            {{ render_field(form.heslo) }}
+            <input type="submit" class="register" value="Jmenovat vladca">
+        </form>
+</main>
+
+{% endblock%}

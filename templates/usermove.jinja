@@ -5,21 +5,11 @@
 
 <main>
         <form method=post class="registerbox">
-            {{ render_field(form.meno) }}
-            {{ render_field(form.priezvisko) }}
-            {{ render_field(form.pohlavie) }}
             {{ render_field(form.email) }}
             {{ render_field(form.heslo) }}
-            <div>
             {{ render_field(form.zakladne_id_zakladne) }}
-            </div>
-            <input type="submit" class="register" value="Registrovať">
+            <input type="submit" class="register" value="Premiestiť uživatela">
         </form>
-
-
-        <a href="/login" class="backLogin">• späť na prihlásenie</a>
-
-        
 </main>
 
 {% endblock%}
