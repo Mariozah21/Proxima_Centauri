@@ -5,8 +5,11 @@
 <main>
     <div class="profile">
         <img class="profile-img" src="/static/img/colony2.jpg"></img>
-        <p class="profile-name">Meno Priezvisko</p>
-    </div>
+        <p class="profile-name">Meno Priezvisko </p>
+    </div>  
+        <div class="profileButton">
+            <button onclick="window.location.href='/mybase'">Upraviť profil</button>
+        </div>
     <div class="zakladny">
         <div>
             <p>Mapa Zakladni</p>
@@ -19,6 +22,7 @@
             <button onclick="window.location.href='/mybase'">Viac</button>
         </div>
     </div>
+    <button id="logout" onclick="window.location.href='/logout'">Odhlásiť</button>
 </main>
 
 {% endblock%}

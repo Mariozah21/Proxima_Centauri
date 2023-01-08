@@ -373,6 +373,15 @@ section{
     justify-content: space-between;
 }
 
+@media screen and (max-width: 576px) {
+    .zakladny{
+        margin-top: 30px;
+        padding-top: 0px;
+        height: 250px;
+    }
+}
+
+
 .zakladny div {
     margin-top: 100px;
     padding-top: 30px;
@@ -384,6 +393,7 @@ section{
 
 @media screen and (max-width: 576px) {
     .zakladny div{
+        margin-top: 30px;
         padding-top: 0px;
         height: 150px;
     }
@@ -399,13 +409,35 @@ section{
     margin-left: 25%;
 }
 
-.anchor {
-    /*
-    Used to create an invisible element that is jumped to when clicking a link in the navbar.
-    This element has a negative offset to ensure that the target section is not hidden behind the floating navbar.
-     */
-        display: block;
-        position: relative;
-        top: -5.5em;
-        visibility: hidden;
+#logout{
+    margin-left: 85%;
+    margin-bottom: 2%;
+}
+@media screen and (max-width: 576px) {
+    #logout{
+        margin-top: 20px;
+        margin-left: 75%;
+        margin-bottom: 2%;
     }
+}
+
+.profileButton {
+    margin-left: 85%;
+    width: 150px;
+    height: 3em;
+    padding: 2%;
+}
+
+.profileButton button{
+    font-weight: normal;
+    width: 5em;
+    height: 3em;
+    padding: 2%;
+}
+
+
+@media screen and (max-width: 576px) {
+    .profileButton{
+        margin-left: 63.5%;
+    }
+}

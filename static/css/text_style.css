@@ -203,3 +203,20 @@ input{
         font-size:5vw;
     }
 }
+
+@media screen and (max-width: 576px) {
+    #logout{
+        font-size: 2.1vw;
+    }
+}
+
+.profileButton button{
+    font-size: 1.2vw;
+}
+
+
+@media screen and (max-width: 576px) {
+    .profileButton button{
+        font-size: 1.7vw;
+    }
+}
