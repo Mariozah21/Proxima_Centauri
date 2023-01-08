@@ -103,15 +103,31 @@ button:hover {
     border-color: rgb(37, 150, 190);
 }
 
-.zakladny div {
-    border-color: rgb(37, 150, 190);
+.profile-name:hover {
+    color: rgb(37, 150, 190);
+    transition: 0.5s;
 }
 
-.zakladny div p{
-    color: rgb(37, 150, 190);
+.profile-img:hover {
+    opacity: 0.5;
+    transition: 0.5s;
 }
 
-.zakladny div button{
-    color: rgb(37, 150, 190);
-    border-color: rgb(37, 150, 190);
+table {
+    background-color:#EFF5F5;
+}
+
+th, table button{
+    color:black;
+}
+
+table button {
+    background-color: black;
+    color: white;
+}
+
+table button:hover {
+    background-color: rgb(37, 150, 190);
+    color: black;
+    transition: 0.5s;
 }

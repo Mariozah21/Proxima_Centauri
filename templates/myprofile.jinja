@@ -3,29 +3,64 @@
 {% block content %}
 
 <main>
+
+    <div class="logout">
+
+    <button onclick="window.location.href='/myprofile/newbase'">Upraviť profil</button>
+
+    {% if session['role'] == 2 or session['role'] == 1 %}
+    <button id="newbase" onclick="window.location.href='/myprofile/newbase'">Nová zakladňa</button>
+    {% endif %}
+
+    <button id="logout" onclick="window.location.href='/logout'">Odhlásiť</button>
+    </div>
+
+
     <div class="profile">
-        <img class="profile-img" src="/static/img/colony2.jpg"></img>
-        <p class="profile-name">Meno Priezvisko </p>
-    </div>  
-        <div class="profileButton">
-            <button onclick="window.location.href='/myprofile/newbase'">Upraviť profil</button>
+        <img class="profile-img" src="/static/img/colony2.jpg" onclick="window.location.href='/account'"></img>
+        <p class="profile-name" onclick="window.location.href='/account'">Meno Priezvisko</p>
+    </div>
+
+
+    <div class="float-container">
+        <div class="sub-two-container">
+        <table>
+            <thead>
+            <tr>
+                <th>Mapa základní</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>
+                <button onclick="window.location.href='/basemap'">Viac</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
         </div>
-    <div class="zakladny">
-        <div>
-            <p>Mapa Zakladni</p>
-            <br>
-            <button onclick="window.location.href='/basemap'">Viac</button>
-        </div>
-        <div>
-            <p>Moja Zakladna</p>
-            <br>
-            <button onclick="window.location.href='/mybase'">Viac</button>
+
+        <div class="sub-two-container">
+        <table>
+            <thead>
+            <tr>
+                <th>Moja základňa</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>
+                <button onclick="window.location.href='/mybase'">Viac</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
         </div>
     </div>
-    {% if session['role'] == 2 or session['role'] == 1 %}
-    <button id="newbase" onclick="window.location.href='/myprofile/newbase'">Nová zakladna</button>
-    {% endif %}
-    <button id="logout" onclick="window.location.href='/logout'">Odhlásiť</button>
+
+
 </main>
 
 {% endblock%}
