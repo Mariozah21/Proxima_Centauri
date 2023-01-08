@@ -64,8 +64,9 @@ class UserService():
         return db.execute( sql ).fetchall()
 
     @staticmethod
-    def email_control(email):
+    def email_control(email, zakladne_id_zakladne, priezvisko, pohlavie):
         db = get_db()
         user = db.execute(
-            'SELECT RegUzivatelia.email FROM RegUzivatelia WHERE email = ?', [email]).fetchone()
+            'SELECT RegUzivatelia.email, RegUzivatelia.zakladne_id_zakladne, RegUzivatelia.priezvisko, RegUzivatelia.pohlavie FROM RegUzivatelia WHERE email = ? OR (zakladne_id_zakladne = ? AND priezvisko = ? AND pohlavie = ?)', [email, zakladne_id_zakladne, priezvisko, pohlavie]).fetchone()
         return user
+    

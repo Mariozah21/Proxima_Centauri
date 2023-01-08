@@ -40,15 +40,15 @@ def view_login_page():
 def view_register_page():
     form = forms.RegisterUserForm(request.form)
     if request.method == 'POST':
-        user = UserService.email_control(request.form['email'])
+        user = UserService.email_control(request.form['email'], request.form['zakladne_id_zakladne'], request.form['priezvisko'], request.form['pohlavie'])
         if user is None:
             UserService.register_user(
-           meno=request.form['meno'],
-           priezvisko=request.form['priezvisko'],
-           pohlavie=request.form['pohlavie'],
-           email=request.form['email'],
-           heslo=request.form['heslo'], 
-           zakladne_id_zakladne=request.form['zakladne_id_zakladne'],
+            meno=request.form['meno'],
+            priezvisko=request.form['priezvisko'],
+            pohlavie=request.form['pohlavie'],
+            email=request.form['email'],
+            heslo=request.form['heslo'], 
+            zakladne_id_zakladne=request.form['zakladne_id_zakladne'],
             )
             flash('Uzivatel zaregistrovany')
             return redirect(url_for('view_login_page'))
@@ -97,14 +97,20 @@ def view_ultvlad_page():
 def view_new_base():
     form = forms.NewBaseForm(request.form)
     if request.method == 'POST':
-        BaseService.add_base(
+        base = BaseService.base_control(request.form['nazov'], request.form['suradnica_x'], request.form['suradnica_y'])
+        if base is None:
+           BaseService.add_base(
            nazov=request.form['nazov'],
            stavej=request.form['stavej'],
            suradnica_x=request.form['suradnica_x'],
            suradnica_y=request.form['suradnica_y'],
            medzi_galakticke_kredity=request.form['medzi_galakticke_kredity'], 
-        )
-        flash('Uzivatel zaregistrovany')
+           )
+           flash('Zakladna pridana')
+           return redirect(url_for('view_ultvlad_page'))
+        else:
+            flash('Zakladna uz existuje')
+            return redirect(url_for('view_new_base'))
     return render_template("newbase.jinja", form=form)
 
 @app.route("/ultvlad/usermove", methods=['GET','POST'])

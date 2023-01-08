@@ -29,8 +29,6 @@
         {% for user in RegUzivatelia if user.zakladne_id_zakladne == session['id_zakladne']%}
             <div>
             <p> {{user.meno}} {{user.priezvisko}} {{user.pohlavie}} {{user.email}}</p>
-                
-            <img class="profile-img" src="/static/img/colony2.jpg" onclick="window.location.href='/account'"></img>
             </div>
         {% else %}
         <div>
