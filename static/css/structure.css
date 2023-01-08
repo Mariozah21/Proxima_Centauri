@@ -238,6 +238,14 @@ footer div {
     margin-right: 100px;
     }
 }
+
+.registerbox dd li input{
+        width: unset;
+    }
+.registerbox dd li {
+    margin-right: 100px;
+}
+
 .register{
     padding: 0.5em 1em;
     box-sizing: border-box;
@@ -270,7 +278,7 @@ footer div {
     }
 }
 .registerbox input[type="radio"]{
-    transform: scale(2);
+    transform: scale(2.5);
     accent-color:rgb(37, 150, 190);
 }
 
@@ -287,6 +295,10 @@ footer div {
     border-radius: 1px;
     padding-left: 15px;
     padding-top: 15px;
+}
+.registerbox dd li input{
+    width: unset;
+
 }
 
 .register {
@@ -478,4 +490,8 @@ th {
     .sub-two-container td button{
        margin-left: unset;
     }
+}
+
+.sub-two-container td button{
+    margin-left: unset;
 }
