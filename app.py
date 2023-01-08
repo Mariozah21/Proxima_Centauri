@@ -1,6 +1,7 @@
 from flask import Flask, render_template,request, flash, redirect, url_for, session
 from Database import database
 from service.user_service import UserService
+from service.base_service import BaseService
 import forms, auth
 
 app = Flask(__name__)
@@ -73,6 +74,22 @@ def view_mybase_page():
 @app.route("/aboutus")
 def view_about_us():
     return render_template("aboutus.jinja")
+
+@app.route("/myprofile/newbase", methods=['GET','POST'])
+@auth.login_required
+@auth.roles_required(1, 2)
+def view_new_base():
+    form = forms.NewBaseForm(request.form)
+    if request.method == 'POST':
+        BaseService.add_base(
+           nazov=request.form['nazov'],
+           stavej=request.form['stavej'],
+           suradnica_x=request.form['suradnica_x'],
+           suradnica_y=request.form['suradnica_y'],
+           medzi_galakticke_kredity=request.form['medzi_galakticke_kredity'], 
+        )
+        flash('Uzivatel zaregistrovany')
+    return render_template("newbase.jinja", form=form)
 
 @app.route('/logout')
 @auth.login_required

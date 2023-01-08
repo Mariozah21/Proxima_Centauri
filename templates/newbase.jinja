@@ -1,0 +1,17 @@
+{% extends '__smallmain.jinja' %}
+{% from 'macros/form_field.jinja' import render_field with context %}
+
+{% block content %}
+
+<main>
+        <form method=post class="registerbox">
+            {{ render_field(form.nazov) }}
+            {{ render_field(form.stavej) }}
+            {{ render_field(form.suradnica_x) }}
+            {{ render_field(form.suradnica_y) }}
+            {{ render_field(form.medzi_galakticke_kredity) }}
+            <input type="submit" class="register" value="Pridať základnu">
+        </form>
+</main>
+
+{% endblock%}
