@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<section>
+<main>
         <form method=post class="registerbox">
             {{ render_field(form.meno) }}
             {{ render_field(form.priezvisko) }}
@@ -13,6 +13,6 @@
             <input type="submit" class="register" value="Registrovať">
         </form>
         <a href="/login" class="backLogin">• späť na prihlásenie</a>
-</section>
+</main>
 
 {% endblock%}
