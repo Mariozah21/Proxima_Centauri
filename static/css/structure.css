@@ -79,6 +79,11 @@ button{
     left: 0;
     margin: 2%;
 }
+@media screen and (max-width: 576px) {
+    .logo{
+        display: none;
+    }
+}
 
 .logo2{
     width: 20%;
@@ -176,19 +181,19 @@ footer div {
 }
 @media screen and (max-width: 576px) {
     .loginbox {
-    padding-top: 45%;
-    padding-bottom: 45%;
+    padding-top: 60%;
+    padding-bottom: 60%;
     width: 80%;
     }
     .loginbox h1{
     padding-bottom: 20px;
     }
     .registerbox{
-    padding-top: 25%;
-    padding-bottom: 25%;
+    padding-top: 35%;
+    padding-bottom: 35%;
     width: 80%;
     }
-    .registerbox h1{
+    .registerbox dd{
      padding-bottom: 20px;
     }
 }

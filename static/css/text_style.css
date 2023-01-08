@@ -35,7 +35,7 @@ nav ul li a {
 }
 @media screen and (max-width: 576px) {
     nav ul li a{
-    font-size: 5vw;
+    font-size: 6vw;
     font-weight: 1000;
     }
 
@@ -164,13 +164,13 @@ button{
     font-size:6vw;
    }
     .registerbox label{
-    font-size: 3.5vw;
+    font-size: 5vw;
     }
     .register{
-     font-size: 3.5vw;
+     font-size: 4vw;
     }
-    .registerbox label{
-    font-size: 4vw;
+    .backLogin{
+     font-size: 4vw;
     }
 }
 
