@@ -58,7 +58,7 @@ class UserService():
 
 
     @staticmethod
-    def get_users_mybase(baseId):
+    def get_users_mybase():
         db = get_db()
-        sql = 'SELECT meno, priezvisko, pohlavie, email FROM RegUzivatelia WHERE zakladne_id_zakladne = ?', [baseId]
+        sql = 'SELECT meno, priezvisko, pohlavie, email , zakladne_id_zakladne FROM RegUzivatelia'
         return db.execute( sql ).fetchall()
