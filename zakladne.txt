@@ -6,3 +6,18 @@
 6 ,"Saturn06" ,20000, 51.30.26 ,00.07.39 ,250000
 7 ,"Uran07" ,35000 ,33.51.36 ,151.12.40 ,400000
 8 ,"Neptun08", 35000 ,38.51.36 ,200.12.40 ,400000
+
+
+
+{% else %}
+        <div>
+        <p>Nikto neni na tvojej zakladni</p>
+        </div>
+
+
+
+        {% if Uzivatelia.profilovka == FALSE %}
+                <img class="profile-img" src="/static/img/colony2.jpg" onclick="window.location.href='/account'"></img>
+                {% else %}
+                <img class="profile-img" src={{Uzivatelia.profilovka}} onclick="window.location.href='/account'"></img>
+                {% endif %}

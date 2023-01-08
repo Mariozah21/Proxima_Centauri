@@ -5,7 +5,7 @@
 <main>
     <div class="profile">
         <img class="profile-img" src="/static/img/colony2.jpg"></img>
-        <p class="profile-name">Meno Priezvisko</p>
+        <p class="profile-name">{{session['meno']}} {{session['priezvisko']}}</p>
     </div>
     
     <div class="float-container">
@@ -24,6 +24,19 @@
         </div>
     </div>
 
+    <div class ="float-container">
+        {% for user in RegUzivatelia%}
+            <div>
+                <p> {{user.meno}} {{user.priezvisko}} {{user.pohlavie}} {{user.email}}</p>
+                
+                <img class="profile-img" src="/static/img/colony2.jpg" onclick="window.location.href='/account'"></img>
+            </div>
+        {% else %}
+        <div>
+        <p>Nikto neni na tvojej zakladni</p>
+        </div>
+        {% endfor %}
+    </div>
 </main>
 
 {% endblock%}

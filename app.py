@@ -30,6 +30,7 @@ def view_login_page():
             session['role'] = user['id_role']
             session['meno'] = user['meno']
             session['priezvisko'] = user['priezvisko']
+            session['id_zakladne'] = user['zakladne_id_zakladne']
             
 
             return redirect(url_for('view_myprofile_page'))

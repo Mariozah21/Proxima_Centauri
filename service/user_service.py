@@ -10,9 +10,11 @@ class UserService():
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
 
         user = db.execute('''
-            SELECT RegUzivatelia.email, RegUzivatelia.heslo, typ_role.id_role, RegUzivatelia.meno, RegUzivatelia.priezvisko
+            SELECT RegUzivatelia.email, RegUzivatelia.heslo, typ_role.id_role, 
+            RegUzivatelia.meno, RegUzivatelia.priezvisko, RegUzivatelia.zakladne_id_zakladne
             FROM RegUzivatelia
             JOIN typ_role ON (typ_role_id_role = typ_role.id_role)
+            JOIN zakladne ON (zakladne_id_zakladne = zakladne.id_zak)
             WHERE email = ? AND heslo = ? ''',[login, heslo]).fetchone()
         if user:
             return user
