@@ -20,16 +20,17 @@
 
         <p>Porttitor Sed eleifend nulla risus Curabitur non pretium non amet semper.
         Orci Praesent In eget Ut odio parturient sed Morbi ut urna. Id libero malesuada neque malesuada nonummy et.
+        
         </p>
         </div>
     </div>
 
-    <div class ="float-container">
-        {% for user in RegUzivatelia%}
+    <div class="side-by-side">
+        {% for user in RegUzivatelia %}
             <div>
-                <p> {{user.meno}} {{user.priezvisko}} {{user.pohlavie}} {{user.email}}</p>
+            <p> {{user.meno}} {{user.priezvisko}} {{user.pohlavie}} {{user.email}}</p>
                 
-                <img class="profile-img" src="/static/img/colony2.jpg" onclick="window.location.href='/account'"></img>
+            <img class="profile-img" src="/static/img/colony2.jpg" onclick="window.location.href='/account'"></img>
             </div>
         {% else %}
         <div>

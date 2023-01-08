@@ -55,3 +55,10 @@ class UserService():
             'UPDATE zakladne SET stavej = ? WHERE nazov = ?', [kolik, nazov]
             )
         db.commit() 
+
+
+    @staticmethod
+    def get_users_mybase(baseId):
+        db = get_db()
+        sql = 'SELECT meno, priezvisko, pohlavie, email FROM RegUzivatelia WHERE zakladne_id_zakladne = ?', [baseId]
+        return db.execute( sql ).fetchall()

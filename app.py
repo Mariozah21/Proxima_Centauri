@@ -72,7 +72,9 @@ def view_basemap_page():
 @app.route("/mybase")
 @auth.login_required
 def view_mybase_page():
-    return render_template("mybase.jinja")
+    idzakladne = session['id_zakladne']
+    RegUzivatelia = UserService.get_users_mybase(str(idzakladne))
+    return render_template("mybase.jinja",RegUzivatelia=RegUzivatelia)
 
 
 @app.route("/aboutus")
