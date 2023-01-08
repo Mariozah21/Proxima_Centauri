@@ -10,6 +10,9 @@
             {{ render_field(form.pohlavie) }}
             {{ render_field(form.email) }}
             {{ render_field(form.heslo) }}
+            <div>
+            {{ render_field(form.zakladne_id_zakladne) }}
+            </div>
             <input type="submit" class="register" value="Registrovať">
         </form>
         <a href="/login" class="backLogin">• späť na prihlásenie</a>

@@ -20,9 +20,9 @@ class UserService():
             return None
 
     @staticmethod
-    def register_user(meno,priezvisko,pohlavie,email,heslo):
+    def register_user(meno,priezvisko,pohlavie,email,heslo, zakladne_id_zakladne):
         db = get_db()
         db.execute(
-            'INSERT INTO RegUzivatelia (meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (? ,? ,? ,?, ?, ?, ?, ?)', [meno, priezvisko, pohlavie, 5, 'status', email, heslo, 3]
+            'INSERT INTO RegUzivatelia (meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (? ,? ,? ,?, ?, ?, ?, ?)', [meno, priezvisko, pohlavie, zakladne_id_zakladne, 'status', email, heslo, 3]
         )
         db.commit()

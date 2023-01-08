@@ -255,9 +255,16 @@ footer div {
     }
 }
 .registerbox input[type="radio"]{
-    transform: scale(1.5);
+    transform: scale(2);
     accent-color:rgb(37, 150, 190);
 }
+
+.registerbox div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 @media screen and (max-width: 576px) {
     .registerbox input[type="radio"] {

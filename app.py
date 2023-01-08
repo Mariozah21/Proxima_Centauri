@@ -45,8 +45,10 @@ def view_register_page():
            pohlavie=request.form['pohlavie'],
            email=request.form['email'],
            heslo=request.form['heslo'], 
+           zakladne_id_zakladne=request.form['zakladne_id_zakladne'],
         )
         flash('Uzivatel zaregistrovany')
+        return redirect(url_for('view_login_page'))
     return render_template("register.jinja", form=form)
 
 
@@ -67,6 +69,7 @@ def view_basemap_page():
 
 
 @app.route("/mybase")
+@auth.login_required
 def view_mybase_page():
     return render_template("mybase.jinja")
 
@@ -77,7 +80,7 @@ def view_about_us():
 
 @app.route("/myprofile/newbase", methods=['GET','POST'])
 @auth.login_required
-@auth.roles_required(1, 2)
+@auth.roles_required(1)
 def view_new_base():
     form = forms.NewBaseForm(request.form)
     if request.method == 'POST':
