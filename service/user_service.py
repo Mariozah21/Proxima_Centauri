@@ -116,8 +116,8 @@ class UserService():
             db.execute(
                 'UPDATE RegUzivatelia SET heslo = ? WHERE email = ? and heslo = ?',[noveheslo,email,heslo]
             )
-            db.commit() 
-            return True           
+            db.commit()
+            return True            
         else:
             return False
 
