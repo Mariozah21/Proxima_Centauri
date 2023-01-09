@@ -69,14 +69,15 @@ def view_account_page():
 def change_meno_page():
     form = forms.ChangeMenoform(request.form)
     if request.method == 'POST':
-        logic = UserService.Change_Meno_Priezvisko(email=session['email'],meno=request.form['meno'], priezvisko=request.form['priezvisko'], heslo=request.form['heslo'])
-        if logic == True:    
-            flash('Meno zmenene')
-            return redirect(url_for('change_success_page'))
+        user = UserService.Change_Meno_Priezvisko(email=session['email'],meno=request.form['meno'], priezvisko=request.form['priezvisko'], heslo=request.form['heslo'])
+        if not user:  
+            flash('nespravne heslo')  
         else:
-            flash('nespravne heslo')
-    else:
-        flash('Error')
+            flash('Meno zmenene')
+            session['meno'] = logic['meno']
+            session['priezvisko'] = logic['priezvisko']
+            return redirect(url_for('change_success_page'))
+            
     return render_template("changemeno.jinja" , form=form)
 
 @app.route("/account/changeprofilovka")
@@ -104,14 +105,15 @@ def change_heslo_page():
 def change_email_page():
     form = forms.ChangeEmailForm(request.form)
     if request.method == 'POST':
-        logic = UserService.change_email(email=session['email'],novyemail=request.form['novyemail'] + "@proxima.universe", heslo=request.form['heslo'])
-        if logic == True:
-            flash('email Zmeneny')
-            return redirect(url_for('change_success_page'))
+        user = UserService.change_email(email=session['email'],novyemail=request.form['novyemail'] + "@proxima.universe", heslo=request.form['heslo'])
+        if not user:
+            flash('Nespravne heslo')
+            
         else:
-            flash('Nespravne heslo')   
-    else:
-        flash('NejakyError')
+            flash('email Zmeneny')
+            session['email'] = user['email']
+            return redirect(url_for('change_success_page'))
+
     return render_template("changeemail.jinja", form=form)   
 
 
