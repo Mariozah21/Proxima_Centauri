@@ -110,9 +110,10 @@ class UserService():
             db.execute(
                 'UPDATE RegUzivatelia SET heslo = ? WHERE email = ? and heslo = ?',[noveheslo,email,heslo]
             )
-            db.commit()            
+            db.commit()
+            return True            
         else:
-            return None
+            return False
 
     @staticmethod
     def check_change_password(email,heslo):

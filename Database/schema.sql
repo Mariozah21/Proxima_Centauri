@@ -87,7 +87,7 @@ INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id
 INSERT INTO typ_role (id_role, typ_role) VALUES (1 ,'ultimatnyvladca');
 INSERT INTO typ_role (id_role, typ_role) VALUES (2, 'vladcazakladne');
 INSERT INTO typ_role (id_role, typ_role) VALUES (3, 'kolonista');
-
+       
 --inserting bases
 
 INSERT INTO zakladne (id_zak, nazov, stavej, suradnica_x, suradnica_y, medzi_galakticke_kredity) VALUES (1 ,'Merkur01' ,15000 ,49.12 ,16.37 ,200000);

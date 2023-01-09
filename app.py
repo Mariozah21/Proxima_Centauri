@@ -70,12 +70,12 @@ def change_meno_page():
     form = forms.ChangeMenoform(request.form)
     if request.method == 'POST':
         user = UserService.Change_Meno_Priezvisko(email=session['email'],meno=request.form['meno'], priezvisko=request.form['priezvisko'], heslo=request.form['heslo'])
-        if not user:  
+        if not user:
             flash('nespravne heslo')  
         else:
             flash('Meno zmenene')
-            session['meno'] = logic['meno']
-            session['priezvisko'] = logic['priezvisko']
+            session['meno'] = request.form['meno']
+            session['priezvisko'] = request.form['priezvisko']
             return redirect(url_for('change_success_page'))
             
     return render_template("changemeno.jinja" , form=form)
@@ -95,7 +95,7 @@ def change_heslo_page():
             flash('Heslo zmenene')
             return redirect(url_for('change_success_page'))
         else:
-            flash('Nespravne heslo')    
+            flash('Nespravne heslo')
     else:
         flash('NejakyError')
     return render_template("changeheslo.jinja", form = form)
@@ -105,13 +105,12 @@ def change_heslo_page():
 def change_email_page():
     form = forms.ChangeEmailForm(request.form)
     if request.method == 'POST':
-        user = UserService.change_email(email=session['email'],novyemail=request.form['novyemail'] + "@proxima.universe", heslo=request.form['heslo'])
+        user = UserService.change_email(email=session['email'],novyemail=request.form['novyemail'], heslo=request.form['heslo'])
         if not user:
             flash('Nespravne heslo')
-            
         else:
             flash('email Zmeneny')
-            session['email'] = user['email']
+            session['email'] = request.form['novyemail']
             return redirect(url_for('change_success_page'))
 
     return render_template("changeemail.jinja", form=form)   
