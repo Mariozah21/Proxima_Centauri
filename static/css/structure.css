@@ -54,10 +54,11 @@ nav ul li {
 @media screen and (max-width: 576px) {
     .hamburger {
         display: block;
+        position: inherit;
     }
      nav {
         display: none;
-         position: fixed;
+        position: inherit;
     }
     nav.visible {
         display: flex;
@@ -181,15 +182,15 @@ footer div {
 }
 @media screen and (max-width: 576px) {
     .loginbox {
-    padding-top: 60%;
-    padding-bottom: 60%;
+    padding-top: 30%;
+    padding-bottom: 30%;
     width: 80%;
     }
     .loginbox h1{
     padding-bottom: 20px;
     }
     .registerbox{
-    padding-top: 35%;
+    padding-top: 20%;
     padding-bottom: 35%;
     width: 80%;
     }
@@ -477,12 +478,12 @@ th {
 
 @media screen and (max-width: 576px) {
     .logout{
-        padding-top: 60px;
+        padding-top: 30px;
         padding-bottom: 30px;
         display:inline-block;
     }
     .moznostivladca {
-        padding-top: 60px;
+        padding-top: 30px;
         padding-bottom: 30px;
         display:flex;
         margin-right: unset;
