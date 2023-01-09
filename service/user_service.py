@@ -82,7 +82,10 @@ class UserService():
             user = db.execute(
                 'SELECT meno, priezvisko FROM RegUzivatelia Where email = ? and heslo = ?',[email,heslo]
             ).fetchone
-            return user
+            if user:
+                return user
+            else:
+                return None
         else:
             return None
 
@@ -98,9 +101,12 @@ class UserService():
             user = db.execute(
                 'SELECT email FROM RegUzivatelia Where email = ? and heslo = ?',[novyemail,heslo]
             ).fetchone
-            return user
+            if user:
+                return user
+            else:
+                return None
         else:
-            return None
+            return False
 
     @staticmethod
     def change_heslo( email,noveheslo, heslo):
@@ -110,9 +116,10 @@ class UserService():
             db.execute(
                 'UPDATE RegUzivatelia SET heslo = ? WHERE email = ? and heslo = ?',[noveheslo,email,heslo]
             )
-            db.commit()            
+            db.commit() 
+            return True           
         else:
-            return None
+            return False
 
     @staticmethod
     def check_change_password(email,heslo):

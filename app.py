@@ -74,8 +74,8 @@ def change_meno_page():
             flash('nespravne heslo')  
         else:
             flash('Meno zmenene')
-            session['meno'] = logic['meno']
-            session['priezvisko'] = logic['priezvisko']
+            session['meno'] = user['meno']
+            session['priezvisko'] = user['priezvisko']
             return redirect(url_for('change_success_page'))
             
     return render_template("changemeno.jinja" , form=form)
