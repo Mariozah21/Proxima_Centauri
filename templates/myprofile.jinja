@@ -21,7 +21,11 @@
 
 
     <div class="profile">
+        {% if session['profilovka'] == None %}
         <img class="profile-img" src="/static/img/colony2.jpg" onclick="window.location.href='/account'"></img>
+        {% else %}
+        <img class="profile-img" src={{session['profilovka']}} onclick="window.location.href='/account'"></img>
+        {% endif %}
         <p class="profile-name" onclick="window.location.href='/account'"> {{session['meno']}} {{session['priezvisko']}} </p>
     </div>
 

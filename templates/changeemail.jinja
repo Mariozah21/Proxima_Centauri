@@ -4,6 +4,11 @@
 {% block content %}
 
 <main>
+        <form method=post class="registerbox">
+            {{ render_field(form.novyemail) }}
+            {{ render_field(form.heslo) }}
+            <input type="submit" class="register" value="Zmenit Email">
+        </form>
 
 </main>
 

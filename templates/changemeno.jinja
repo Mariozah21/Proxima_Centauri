@@ -4,6 +4,12 @@
 {% block content %}
 
 <main>
+        <form method=post class="registerbox">
+            {{ render_field(form.meno) }}
+            {{ render_field(form.priezvisko) }}
+            {{ render_field(form.heslo) }}
+            <input type="submit" class="register" value="Zmenit Meno">
+        </form>
 
 </main>
 

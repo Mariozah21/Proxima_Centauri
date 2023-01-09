@@ -31,3 +31,16 @@ class NameUserForm(Form):
 class EnergyForm(Form):
     nazov = StringField(name='nazov',label='Nazov',validators=[validators.length(min=2,max=50), validators.InputRequired()])
     kolik = IntegerField(name='stavej',label='Energy',validators=[validators.InputRequired()])
+
+class ChangeMenoform(Form):
+    meno = StringField(name='meno',label='Nove Meno',validators=[validators.length(min=2,max=50), validators.InputRequired()])
+    priezvisko = StringField(name='priezvisko',label='Nove Priezvisko',validators=[validators.length(min=2,max=100), validators.InputRequired()])
+    heslo = PasswordField(name='heslo',label='Heslo',validators=[validators.length(min=5,max=100), validators.InputRequired()])
+
+class ChangeHesloForm(Form):
+    heslo = PasswordField(name='heslo',label='Heslo',validators=[validators.length(min=5,max=100), validators.InputRequired()])
+    noveheslo = PasswordField(name='noveheslo',label='NoveHeslo',validators=[validators.length(min=5,max=100), validators.InputRequired()])
+
+class ChangeEmailForm(Form):
+    novyemail = StringField(name='novyemail',label='NovyEmail',validators=[validators.length(min=2,max=100), validators.InputRequired()])
+    heslo = PasswordField(name='heslo',label='Heslo',validators=[validators.length(min=5,max=100), validators.InputRequired()])

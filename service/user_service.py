@@ -11,7 +11,7 @@ class UserService():
 
         user = db.execute('''
             SELECT RegUzivatelia.email, RegUzivatelia.heslo, typ_role.id_role, 
-            RegUzivatelia.meno, RegUzivatelia.priezvisko, RegUzivatelia.zakladne_id_zakladne
+            RegUzivatelia.meno, RegUzivatelia.priezvisko, RegUzivatelia.zakladne_id_zakladne, RegUzivatelia.profilovka
             FROM RegUzivatelia
             JOIN typ_role ON (typ_role_id_role = typ_role.id_role)
             JOIN zakladne ON (zakladne_id_zakladne = zakladne.id_zak)
@@ -70,3 +70,57 @@ class UserService():
             'SELECT RegUzivatelia.email, RegUzivatelia.zakladne_id_zakladne, RegUzivatelia.priezvisko, RegUzivatelia.pohlavie FROM RegUzivatelia WHERE email = ? OR (zakladne_id_zakladne = ? AND priezvisko = ? AND pohlavie = ?)', [email, zakladne_id_zakladne, priezvisko, pohlavie]).fetchone()
         return user
     
+    @staticmethod
+    def Change_Meno_Priezvisko(email, meno, priezvisko, heslo):
+        db = get_db()
+        logical = UserService.check_change_password(email,heslo) 
+        if logical == True:  
+            db.execute(
+                'UPDATE RegUzivatelia SET meno = ? , priezvisko = ? WHERE email = ? and heslo = ?',[meno,priezvisko,email,heslo]    
+            )
+            db.commit()
+            user = db.execute(
+                'SELECT meno, priezvisko FROM RegUzivatelia Where email = ? and heslo = ?',[email,heslo]
+            ).fetchone
+            return user
+        else:
+            return None
+
+    @staticmethod
+    def change_email( email,novyemail, heslo):
+        db = get_db()
+        logical = UserService.check_change_password(email,heslo) 
+        if logical == True: 
+            db.execute(
+            'UPDATE RegUzivatelia SET email = ? WHERE email = ? and heslo = ?',[novyemail,email,heslo]
+            )
+            db.commit()
+            user = db.execute(
+                'SELECT email FROM RegUzivatelia Where email = ? and heslo = ?',[novyemail,heslo]
+            ).fetchone
+            return user
+        else:
+            return None
+
+    @staticmethod
+    def change_heslo( email,noveheslo, heslo):
+        db = get_db()
+        logical = UserService.check_change_password(email,heslo) 
+        if logical == True: 
+            db.execute(
+                'UPDATE RegUzivatelia SET heslo = ? WHERE email = ? and heslo = ?',[noveheslo,email,heslo]
+            )
+            db.commit()            
+        else:
+            return None
+
+    @staticmethod
+    def check_change_password(email,heslo):
+        db = get_db()
+        user = db.execute(
+            'SELECT meno FROM RegUzivatelia WHERE email = ? and heslo = ?',[email,heslo]
+        ).fetchone()  
+        if user:
+            return True
+        else: 
+            return False

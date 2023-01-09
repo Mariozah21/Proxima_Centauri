@@ -3,15 +3,12 @@
 {% block content %}
 
 <main>
-<div class="profile">
-        <img class="profile-img" src="/static/img/colony2.jpg" onclick="window.location.href='/account/changeprofilovka'"></img>
-        <p class="profile-name" onclick="window.location.href='/account/changemeno'"> {{session['meno']}} {{session['priezvisko']}} </p>
-        <p class="profil-name" onclick="window.location.href='/account/changeemail'"> {{session['email']}}
-        <p class="profil-name" onclick="window.location.href='/account/changeheslo'"> {{session['email']}}
 
+    <div class="zmenaUdajovAccount">
+        <button id="changemeno" onclick="window.location.href='/account/changemeno'">Zmenit Meno</button>
+        <button id="changeheslo" onclick="window.location.href='/account/changeheslo'">Zmenit heslo</button>
+        <button id="changeemail" onclick="window.location.href='/account/changeemail'">Zmenit email</button>
     </div>
-
-
 </main>
 
 {% endblock%}

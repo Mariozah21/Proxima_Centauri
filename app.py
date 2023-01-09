@@ -31,6 +31,7 @@ def view_login_page():
             session['meno'] = user['meno']
             session['priezvisko'] = user['priezvisko']
             session['id_zakladne'] = user['zakladne_id_zakladne']
+            session['profilovka'] = user['profilovka']
             
 
             return redirect(url_for('view_myprofile_page'))
@@ -59,8 +60,66 @@ def view_register_page():
 
 
 @app.route("/account")
+@auth.login_required
 def view_account_page():
     return render_template("account.jinja")
+
+@app.route("/account/changemeno", methods=['GET','POST'])
+@auth.login_required
+def change_meno_page():
+    form = forms.ChangeMenoform(request.form)
+    if request.method == 'POST':
+        logic = UserService.Change_Meno_Priezvisko(email=session['email'],meno=request.form['meno'], priezvisko=request.form['priezvisko'], heslo=request.form['heslo'])
+        if logic == True:    
+            flash('Meno zmenene')
+            return redirect(url_for('change_success_page'))
+        else:
+            flash('nespravne heslo')
+    else:
+        flash('Error')
+    return render_template("changemeno.jinja" , form=form)
+
+@app.route("/account/changeprofilovka")
+@auth.login_required
+def change_profilovka_page():
+    return render_template("changeprofilovka.jinja")
+
+@app.route("/account/changeheslo", methods=['GET','POST'])
+@auth.login_required
+def change_heslo_page():
+    form = forms.ChangeHesloForm(request.form)
+    if request.method == 'POST':
+        logic = UserService.change_heslo(email=session['email'],noveheslo=request.form['noveheslo'], heslo=request.form['heslo'])
+        if logic == True:
+            flash('Heslo zmenene')
+            return redirect(url_for('change_success_page'))
+        else:
+            flash('Nespravne heslo')    
+    else:
+        flash('NejakyError')
+    return render_template("changeheslo.jinja", form = form)
+
+@app.route("/account/changeemail", methods=['GET','POST'])
+@auth.login_required
+def change_email_page():
+    form = forms.ChangeEmailForm(request.form)
+    if request.method == 'POST':
+        logic = UserService.change_email(email=session['email'],novyemail=request.form['novyemail'] + "@proxima.universe", heslo=request.form['heslo'])
+        if logic == True:
+            flash('email Zmeneny')
+            return redirect(url_for('change_success_page'))
+        else:
+            flash('Nespravne heslo')   
+    else:
+        flash('NejakyError')
+    return render_template("changeemail.jinja", form=form)   
+
+
+
+@app.route("/account/changesuccess")
+@auth.login_required
+def change_success_page():
+    return render_template("changesuccess.jinja")
 
 
 @app.route("/myprofile")
