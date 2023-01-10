@@ -10,12 +10,12 @@ class UserService():
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
 
         user = db.execute('''
-            SELECT RegUzivatelia.email, RegUzivatelia.heslo, typ_role.id_role, 
+            SELECT RegUzivatelia.email, RegUzivatelia.hashheslo, typ_role.id_role, 
             RegUzivatelia.meno, RegUzivatelia.priezvisko, RegUzivatelia.zakladne_id_zakladne, RegUzivatelia.profilovka
             FROM RegUzivatelia
             JOIN typ_role ON (typ_role_id_role = typ_role.id_role)
             JOIN zakladne ON (zakladne_id_zakladne = zakladne.id_zak)
-            WHERE email = ? AND heslo = ? ''',[login, heslo]).fetchone()
+            WHERE email = ? AND hashheslo = ? ''',[login, hashed_heslo.hexdigest()]).fetchone()
         if user:
             return user
         else:
@@ -26,7 +26,7 @@ class UserService():
         db = get_db()
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
         db.execute(
-            'INSERT INTO RegUzivatelia (meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (? ,? ,? ,?, ?, ?, ?, ?)', [meno, priezvisko, pohlavie, zakladne_id_zakladne, 'status', email, heslo, 3]
+            'INSERT INTO RegUzivatelia (meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, hashheslo, typ_role_id_role) VALUES (? ,? ,? ,?, ?, ?, ?, ?)', [meno, priezvisko, pohlavie, zakladne_id_zakladne, 'status', email, hashed_heslo.hexdigest(), 3]
         )
         db.commit()
    
@@ -36,7 +36,7 @@ class UserService():
         db = get_db()
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
         db.execute(
-            'UPDATE RegUzivatelia SET zakladne_id_zakladne = ? WHERE email = ? AND heslo = ?', [zakladne_id_zakladne, email, heslo]
+            'UPDATE RegUzivatelia SET zakladne_id_zakladne = ? WHERE email = ? AND hashheslo = ?', [zakladne_id_zakladne, email, hashed_heslo.hexdigest()]
             )
         db.commit()
 
@@ -46,7 +46,7 @@ class UserService():
         db = get_db()
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
         db.execute(
-            'UPDATE RegUzivatelia SET typ_role_id_role = 2 WHERE email = ? AND heslo = ?', [email, heslo]
+            'UPDATE RegUzivatelia SET typ_role_id_role = 2 WHERE email = ? AND hashheslo = ?', [email, hashed_heslo.hexdigest()]
             )
         db.commit() 
 
@@ -80,11 +80,11 @@ class UserService():
         logical = UserService.check_change_password(email,heslo) 
         if logical == True:  
             db.execute(
-                'UPDATE RegUzivatelia SET meno = ? , priezvisko = ? WHERE email = ? and heslo = ?',[meno,priezvisko,email,heslo]    
+                'UPDATE RegUzivatelia SET meno = ? , priezvisko = ? WHERE email = ? and hashheslo = ?',[meno,priezvisko,email,hashed_heslo.hexdigest()]    
             )
             db.commit()
             user = db.execute(
-                'SELECT meno, priezvisko FROM RegUzivatelia Where email = ? and heslo = ?',[email,heslo]
+                'SELECT meno, priezvisko FROM RegUzivatelia Where email = ? and hashheslo = ?',[email,hashed_heslo.hexdigest()]
             ).fetchone
             if user:
                 return user
@@ -100,11 +100,11 @@ class UserService():
         logical = UserService.check_change_password(email,heslo) 
         if logical == True: 
             db.execute(
-            'UPDATE RegUzivatelia SET email = ? WHERE email = ? and heslo = ?',[novyemail,email,heslo]
+            'UPDATE RegUzivatelia SET email = ? WHERE email = ? and hashheslo = ?',[novyemail,email,hashed_heslo.hexdigest()]
             )
             db.commit()
             user = db.execute(
-                'SELECT email FROM RegUzivatelia Where email = ? and heslo = ?',[novyemail,heslo]
+                'SELECT email FROM RegUzivatelia Where email = ? and hashheslo = ?',[novyemail,hashed_heslo.hexdigest()]
             ).fetchone
             if user:
                 return user
@@ -121,7 +121,7 @@ class UserService():
         logical = UserService.check_change_password(email,heslo) 
         if logical == True: 
             db.execute(
-                'UPDATE RegUzivatelia SET heslo = ? , heslo = ? WHERE email = ? and heslo = ?',[noveheslo, heslo,email,heslo]
+                'UPDATE RegUzivatelia SET heslo = ? , hashheslo = ? WHERE email = ? and hashheslo = ?',[noveheslo, hashed_heslo.hexdigest(),email,hashed_heslo.hexdigest()]
             )
             db.commit()
             return True            
@@ -133,7 +133,7 @@ class UserService():
         db = get_db()
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())   
         user = db.execute(
-            'SELECT meno FROM RegUzivatelia WHERE email = ? and heslo = ?',[email,heslo]
+            'SELECT meno FROM RegUzivatelia WHERE email = ? and hashheslo = ?',[email,hashed_heslo.hexdigest()]
         ).fetchone()  
         if user:
             return True
@@ -145,6 +145,6 @@ class UserService():
         db = get_db()
         hashed_heslo = hashlib.sha256(f'{heslo}{config.heslo_SALT}'.encode())
         db.execute(
-            'UPDATE RegUzivatelia SET meno = ?, priezvisko = ?, pohlavie = ? WHERE email = ? AND heslo = ?', [meno, priezvisko, pohlavie, email, heslo]
+            'UPDATE RegUzivatelia SET meno = ?, priezvisko = ?, pohlavie = ? WHERE email = ? AND hashheslo = ?', [meno, priezvisko, pohlavie, email, hashed_heslo.hexdigest()]
             )
         db.commit()
