@@ -28,6 +28,7 @@
     </div>
 
     <div class="spoluobyvatelia">
+        <h1> Kto je s tebou na zakladni </h1>
         {% for user in RegUzivatelia if user.zakladne_id_zakladne == session['id_zakladne']%}
             <div>
                 <p>{{user.meno}} {{user.priezvisko}} {{user.pohlavie}} {{user.email}}</p>
