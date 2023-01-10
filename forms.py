@@ -21,7 +21,7 @@ class NewBaseForm(Form):
 class UserMoveForm(Form):
     email = StringField(name='email',label='Email uzivatela',validators=[validators.length(min=2,max=100), validators.InputRequired()])
     heslo = PasswordField(name='heslo', label='Heslo uzivatela', validators=[validators.Length(min=3), validators.InputRequired()])
-    zakladne_id_zakladne = IntegerField(name='zakladne_id_zakladne',label='Nova zakladna uzivatela',validators=[validators.InputRequired()])
+    zakladne_id_zakladne = IntegerField(name='zakladne_id_zakladne',label='Nova zakladna uzivatela',validators=[validators.InputRequired(), validators.NumberRange(max=10,min=1)])
  
 class NameUserForm(Form):
     email = StringField(name='email',label='Email uzivatela',validators=[validators.length(min=2,max=100), validators.InputRequired()])
