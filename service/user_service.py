@@ -121,7 +121,7 @@ class UserService():
         logical = UserService.check_change_password(email,heslo) 
         if logical == True: 
             db.execute(
-                'UPDATE RegUzivatelia SET heslo = ? , hashheslo = ? WHERE email = ? and hashheslo = ?',[noveheslo, hashed_heslo.hexdigest(),email,hashed_heslo.hexdigest()]
+                'UPDATE RegUzivatelia SET heslo = ? , hashheslo = ? WHERE email = ? and hashheslo = ?',[noveheslo, hashed_noveheslo.hexdigest(),email,hashed_heslo.hexdigest()]
             )
             db.commit()
             return True            
