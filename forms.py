@@ -44,3 +44,11 @@ class ChangeHesloForm(Form):
 class ChangeEmailForm(Form):
     novyemail = StringField(name='novyemail',label='Novy Email',validators=[validators.length(min=2,max=100), validators.InputRequired()])
     heslo = PasswordField(name='heslo',label='Heslo',validators=[validators.length(min=5,max=100), validators.InputRequired()])
+
+class ZmenaUdajuForm(Form):
+    meno = StringField(name='meno',label='Meno',validators=[validators.length(min=2,max=50), validators.InputRequired()])
+    priezvisko = StringField(name='priezvisko',label='Priezvisko',validators=[validators.length(min=2,max=100), validators.InputRequired()])
+    pohlavie = StringField(name='pohlavie',label='Pohlavie',validators=[validators.length(min=1,max=5), validators.InputRequired()])
+    email = StringField(name='email',label='Email uzivatela',validators=[validators.length(min=2,max=100), validators.InputRequired()])
+    heslo = PasswordField(name='heslo', label='Heslo uzivatela', validators=[validators.Length(min=3), validators.InputRequired()])
+    

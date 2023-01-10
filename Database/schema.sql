@@ -89,7 +89,6 @@ INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id
 INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (44, 'Jakub', 'Astapenko', 'muz', 3, 'status', 'jastapenko@proxima.universe', 'jastapenko44', 3);
 INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (45, 'Ondrej', 'Blaha', 'muz', 4, 'status', 'oblaha@proxima.universe', 'oblaha45', 3);
 
-
 --Inserting types of users
 
 INSERT INTO typ_role (id_role, typ_role) VALUES (1 ,'ultimatnyvladca');

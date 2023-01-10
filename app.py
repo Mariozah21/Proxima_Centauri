@@ -157,7 +157,7 @@ def view_ultvlad_page():
 def view_new_base():
     form = forms.NewBaseForm(request.form)
     if request.method == 'POST':
-        base = BaseService.base_control(request.form['nazov'], request.form['suradnica_x'], request.form['suradnica_y'])
+        base = BaseService.base_control(nazov=request.form['nazov'], suradnica_x=request.form['suradnica_x'], suradnica_y=request.form['suradnica_y'])
         if base is None:
            BaseService.add_base(
            nazov=request.form['nazov'],
@@ -201,10 +201,30 @@ def view_naming_vladca():
 def view_energ_price():
     form = forms.EnergyForm(request.form)
     if request.method == 'POST':
-        UserService.name_user(kolik=request.form['stavej'], nazov=request.form['nazov'])
+        UserService.ener_user(kolik=request.form['stavej'], nazov=request.form['nazov'])
         flash('Jednotky zmeneny')
         return redirect(url_for('view_ultvlad_page'))
     return render_template("energprice.jinja", form=form)
+
+
+@app.route("/vlad")
+@auth.login_required
+@auth.roles_required(2)
+def view_vlad_page():
+    return render_template("vlad.jinja")
+
+@app.route("/vlad/zmena_udaju", methods=['GET','POST'])
+@auth.login_required
+@auth.roles_required(2)
+def view_zmena_udaju():
+    form = forms.ZmenaUdajuForm(request.form)
+    if request.method == 'POST':
+        UserService.zmena_user(meno=request.form['meno'], priezvisko=request.form['priezvisko'], pohlavie=request.form['pohlavie'], email=request.form['email'], heslo=request.form['heslo'])
+        flash('Zmeny provedeny')
+        return redirect(url_for('view_myprofile_page'))
+
+    return render_template("zmenaudaju.jinja", form=form)   
+
 
 @app.route('/logout')
 @auth.login_required
