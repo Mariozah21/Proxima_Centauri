@@ -11,6 +11,7 @@ CREATE TABLE RegUzivatelia (
     status               TEXT ,
     email                TEXT NOT NULL,
     heslo                TEXT NOT NULL,
+    hashheslo            TEXT ,
     typ_role_id_role     INTEGER NOT NULL,
     profilovka           TEXT ,
     FOREIGN KEY (zakladne_id_zakladne) REFERENCES zakladne (id_zak),
@@ -34,12 +35,19 @@ CREATE TABLE zakladne (
 
 --inserting registered users
 
-INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (1, 'Silvia', 'Melichova', 'zena', 1 ,'status', 'xsmelichova@proxima.universe' , 'utlimatnyvladca123*', 1); 
-INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (2, 'Lucia', 'Holbova', 'zena', 7 ,'status', 'xlholbova@proxima.universe', 'somvladca789*', 2);
-INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (3, 'Krystof', 'Busek', 'muz', 6, 'status' ,'xkbusek@proxima.universe', 'somvladca456*', 2);
-INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (4, 'Mario', 'Zahorjan', 'muz', 8 ,'status', 'xzahorjan@proxima.universe', 'SuperMari021*', 2); 
-INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (5, 'Adam', 'Bukaj' ,'muz', 5 ,'status' ,'xabukaj@proxima.universe', 'xabukaj5', 2);
-INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (6, 'Kvetoslav', 'Buciek', 'muz', 6, 'status', 'xkbuciek@proxima.universe', 'xkbuciek6', 3);
+--samozrejme heslo ako plaintext by sme 
+--naozaj neukladali, pre moznost overenia
+--funkcionality sme nechali hesla dostupne a viditelne
+
+--ostatne hesla som neprepisoval do hash formatu
+--(bolo by to zbytocne pre uceli projektu)
+
+INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role,hashheslo) VALUES (1, 'Silvia', 'Melichova', 'zena', 1 ,'status', 'xsmelichova@proxima.universe' , 'utlimatnyvladca123*', 1,'dfc3372bf2e666d378a746361906782d7c91c0ab510a8ff8ef2a287dbae24545'); 
+INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role,hashheslo) VALUES (2, 'Lucia', 'Holbova', 'zena', 7 ,'status', 'xlholbova@proxima.universe', 'somvladca789*', 2,'c3d6e2488ae0def4697773e6f5c89b4fc5b43a670b0bd7e778e9f5c70620d7d8');
+INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role,hashheslo) VALUES (3, 'Krystof', 'Busek', 'muz', 6, 'status' ,'xkbusek@proxima.universe', 'somvladca456*', 2,'ad8e758cfcce445d726135cd9afa741ce74c6532049f0db011eb2ebcd0053e50');
+INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role,hashheslo) VALUES (4, 'Mario', 'Zahorjan', 'muz', 8 ,'status', 'xzahorjan@proxima.universe', 'SuperMari021*', 2,'001cef7fafaf55a1625c64c9eeb196907aa42befb9c397397338ed23053f9a81'); 
+INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role,hashheslo) VALUES (5, 'Adam', 'Bukaj' ,'muz', 5 ,'status' ,'xabukaj@proxima.universe', 'xabukaj5', 2,'d39f2290a42eb09583f751143c468c706bbc0474b7337fcd80de15fb80239ca0');
+INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role,hashheslo) VALUES (6, 'Kvetoslav', 'Buciek', 'muz', 6, 'status', 'xkbuciek@proxima.universe', 'xkbuciek6', 3,'b58eaeb324a5f714782665923431012db4dcadb51c90126c47ee679521221f2f');
 
 INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (7, 'Libor', 'Jahn', 'muz', 7, 'status', 'xljahn@proxima.universe', 'xljahn7', 3);
 INSERT INTO RegUzivatelia (id_uzivatela, meno, priezvisko, pohlavie, zakladne_id_zakladne, status, email, heslo, typ_role_id_role) VALUES (8, 'Blahoslav', 'Chatran', 'muz', 8, 'status' , 'xbchatran@proxima.universe', 'xbchatran8', 3);
