@@ -13,10 +13,10 @@ class SignInForm(Form):
 
 class NewBaseForm(Form):
     nazov = StringField(name='nazov',label='Nazov',validators=[validators.length(min=2,max=50), validators.InputRequired()])
-    stavej = IntegerField(name='stavej',label='Stavej',validators=[validators.InputRequired()])
+    stavej = IntegerField(name='stavej',label='Stavej',validators=[validators.InputRequired(),validators.NumberRange(max=100000,min=1)])
     suradnica_x = DecimalField(name='suradnica_x',label='Suradnica_x',validators=[validators.InputRequired()])
     suradnica_y = DecimalField(name='suradnica_y',label='Suradnica_y',validators=[validators.InputRequired()])
-    medzi_galakticke_kredity = IntegerField(name='medzi_galakticke_kredity',label='Medzi_galakticke_kredity',validators=[validators.InputRequired()])
+    medzi_galakticke_kredity = IntegerField(name='medzi_galakticke_kredity',label='Medzi_galakticke_kredity',validators=[validators.InputRequired(),validators.NumberRange(max=1000000,min=0)])
 
 class UserMoveForm(Form):
     email = StringField(name='email',label='Email uzivatela',validators=[validators.length(min=2,max=100), validators.InputRequired()])
@@ -29,8 +29,8 @@ class NameUserForm(Form):
 
     
 class EnergyForm(Form):
-    nazov = StringField(name='nazov',label='Nazov',validators=[validators.length(min=2,max=50), validators.InputRequired()])
-    kolik = IntegerField(name='stavej',label='Energy',validators=[validators.InputRequired()])
+    nazov = StringField(name='nazov',label='Nazov Zakladne',validators=[validators.length(min=2,max=50), validators.InputRequired()])
+    kolik = IntegerField(name='stavej',label='Energy',validators=[validators.InputRequired(), validators.NumberRange(max=100000,min=1)])
 
 class ChangeMenoform(Form):
     meno = StringField(name='meno',label='Nove Meno',validators=[validators.length(min=2,max=50), validators.InputRequired()])
